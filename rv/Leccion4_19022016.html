@@ -15,12 +15,12 @@
   var escena = new THREE.Scene(); //crea escena
   
   var fov = 75; //Campo de vision
-  var aspect =window.innerWidth / window.innerHeight; //relacion de aspecto
+  var aspect = window.innerWidth / window.innerHeight; //relacion de aspecto
   var near = 0.1; //plano cercano
   var far = 1000; //plano lejano
   var camara = new THREE.PerspectiveCamera(fov, aspect, near, far);
   
-  camara.position.z=5;
+  camara.position.z = 5;
   
   var renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth / window.innerHeigth );
