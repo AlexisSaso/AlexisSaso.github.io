@@ -33,8 +33,7 @@ document.body.appendChild(renderer.domElement);
     escena.add(cilindro);
     function render(){
       requestAnimationFrame(render);
-      cilindro.rotation.x+= 0.3;
-      cilindro.rotation.y+= 0.3;
+      cilindro.rotation.y+= 0.1;
       cilindro.rotation.z+= 0.1;
     renderer.render(escena,camara);
     }
