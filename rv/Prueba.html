@@ -24,7 +24,7 @@
   //La figura se establece sobre el plano zx
  var puntos=[];
   for(var i=0;i<50;i++){
-  puntos.push(new THREE.Vector2(3.1416*(i+20)/i,3.1416*(i+30)/i));
+  puntos.push(new THREE.Vector2((i*3.1416+20)/i,(i*3.1416+30)/i));
   }                 
   var forma = new THREE.LatheGeometry(puntos);
   var malla = new THREE.Mesh(forma);
