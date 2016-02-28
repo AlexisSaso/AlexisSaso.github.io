@@ -14,40 +14,37 @@ Curso de Realidad Virtual
 <br><br><br><br><br><br><br><br><br><br><h2>Ejemplo a continuacion:</h2>
 </font></center>
 <canvas  width: 100% height: 100%>
-<script src= "three.min.js"></script>
-<script>
-  var escena =new THREE.Scene();
-  var fov =75; //campo de vision (field)
-  var aspect=window.innerWidth / window.innerHeight
-  //relacion de aspecto
-var near= 0.5; // Plano cercano
-var far= 1050; // plano lejano 
-var camara= new THREE.PerspectiveCamera(fov,aspect,near,far);
-camara.position.z=500;
-var renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth,window.innerHeight);
-document.body.appendChild(renderer.domElement);
-var figura = new THREE.Shape();
-figura.moveTo(10,10);
-figura.lineTo(20,30);
-figura.lineTo(40,40);
-figura.lineTo(20,50);
-figura.lineTo(10,70);
-figura.lineTo(0,50);
-figura.lineTo(-20,40);
-figura.lineTo(0,30);
-figura.lineTo(10,10);
-  var forma = new THREE.ShapeGeometry(figura)
-    var malla = new THREE.Mesh(forma);
-    escena.add(malla);
-    function loop(){
-      requestAnimationFrame(loop);
-      malla.rotation.x+= 0.1;
-      malla.rotation.y+= 0.1;
-      renderer.render(escena,camara);
-    }
-    loop();
-    
+<script src="three.min.js"></script>
+  <script>
+  
+  var camara, escena, renderer;
+  
+  escena= new THREE.Scene();
+  camara= new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+  camara.position.z=500;
+  renderer= new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+  
+  //La figura se establece sobre el plano zx
+ var puntos=[];
+  for(var i=0;i<50;i++){
+  puntos.push(new THREE.Vector2((i*3)^15,(i*2)^19));
+  }                 
+  var forma = new THREE.LatheGeometry(puntos);
+  var malla = new THREE.Mesh(forma);
+  escena.add(malla);
+  
+  function loop(){
+  requestAnimationFrame(loop);
+  
+  malla.rotation.x += 0.01;
+  malla.rotation.y += 0.01;
+  
+  renderer.render( escena, camara);
+  }
+  
+  loop();
 </script>
 </canvas>
 </body>
