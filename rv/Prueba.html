@@ -22,17 +22,11 @@
   document.body.appendChild(renderer.domElement);
   
   //La figura se establece sobre el plano zx
- var figura = new THREE.Shape();
-  figura.moveTo(10,10);
-  figura.lineTo(20,30);
-  figura.lineTo(40,40);
-  figura.lineTo(20,50);
-  figura.lineTo(10,70);
-  figura.lineTo(0,50);
-  figura.lineTo(-20,40);
-  figura.lineTo(0,30);
-  figura.lineTo(10,10);           
-  var forma = new THREE.LatheGeometry(figura);
+ var puntos=[];
+  for(var i=0;i<50;i++){
+  puntos.push(new THREE.Vector2(i*0.01,i*0.001);
+  }                 
+  var forma = new THREE.LatheGeometry(puntos);
   var malla = new THREE.Mesh(forma);
   escena.add(malla);
   
