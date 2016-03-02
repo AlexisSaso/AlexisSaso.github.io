@@ -29,7 +29,7 @@ function Setup(){
   }
   
   function Loop(){
-  requestAnimationFrame(loop);
+  requestAnimationFrame(Loop);
   
   malla.rotation.x += 0.01;
   malla.rotation.y += 0.01;
