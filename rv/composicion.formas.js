@@ -28,7 +28,7 @@ function Setup(){
   document.body.appendChild(renderer.domElement);
   }
   
-  function loop(){
+  function Loop(){
   requestAnimationFrame(loop);
   
   malla.rotation.x += 0.01;
