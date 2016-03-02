@@ -15,7 +15,7 @@ function Setup(){
   THREE.GeometryUtils.merge( forma, esfera2);
   THREE.GeometryUtils.merge( forma, cilindro);
   
-  malla = new THRRE.Mesh(forma);
+  malla = new THREE.Mesh(forma);
   
   escena = new THREE.Scene();
   escena.add(malla);
