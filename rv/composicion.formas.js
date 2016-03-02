@@ -24,7 +24,7 @@ function Setup(){
   camara.position.z = 10;
   
   renderer = new THREEWebGLRenderer();
-  renderer.setSize( window.InnerHeight*.95, window.InnerHeight*.95);
+  renderer.setSize( window.InnerHeight*.95, window.InnerWidth*.95);
   document.body.appendChild(renderer.domElement);
   }
   
