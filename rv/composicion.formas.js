@@ -23,7 +23,7 @@ function Setup(){
   camara = new THREE.PerspectiveCamera();
   camara.position.z = 10;
   
-  renderer = new THREE.WebGLRenderer();
+  var renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.InnerHeight*.95, window.InnerHeight*.95);
   document.body.appendChild(renderer.domElement);
   }
@@ -37,7 +37,7 @@ function Setup(){
   renderer.render( escena, camara);
   }
   
-  var escena, camara, renderer, malla;
+  var escena, camara, malla;
   
   Setup();
   Loop();
