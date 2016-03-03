@@ -1,10 +1,10 @@
 function Setup(){
-  var EsferaForma = new THREE.SphereGeometry(1);
-  var CilindroForma = new THREE.CylinderGeometry(0.5, 0.5, 4);
+  var esferaForma = new THREE.SphereGeometry(1);
+  var cilindroForma = new THREE.CylinderGeometry(0.5, 0.5, 4);
   
-  var esfera1 = new THREE.Mesh(EsferaForma);
-  var esfera2 = new THREE.Mesh(EsferaForma);
-  var cilindro = new THREE.Mesh(CilindroForma);
+  var esfera1 = new THREE.Mesh(esferaForma);
+  var esfera2 = new THREE.Mesh(esferaForma);
+  var cilindro = new THREE.Mesh(cilindroForma);
   
   esfera1.position.y=2;
   esfera2.position.y=-2;
@@ -28,8 +28,8 @@ function Setup(){
   document.body.appendChild(renderer.domElement);
   }
   
-  function Loop(){
-  requestAnimationFrame(Loop);
+  function loop(){
+  requestAnimationFrame(loop);
   
   malla.rotation.x += 0.01;
   malla.rotation.y += 0.01;
@@ -40,4 +40,4 @@ function Setup(){
   var escena, camara, renderer, malla;
   
   Setup();
-  Loop();
+  loop();
