@@ -23,7 +23,7 @@ function setup(){
                     window.innerHeight*.95 );
   document.body.appendChild( renderer.domElement );
 
-  step = 0.01;
+  step = 0.001;
 }
 
 function loop(){
