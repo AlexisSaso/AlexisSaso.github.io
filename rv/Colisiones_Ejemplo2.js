@@ -56,7 +56,7 @@ function loop(){
       
   pelota.position.x += stepx;
   pelota.position.y += stepy;
-  pelota.rotation.z += -stepx*stepy;
+  pelota.rotation.z += -stepx*stepy*10;
   raycaster1.set( pelota.position, new THREE.Vector3(1,0,0) );
   raycaster2.set( pelota.position, new THREE.Vector3(-1,0,0) );
   raycaster3.set( pelota.position, new THREE.Vector3(0,1,0) );
