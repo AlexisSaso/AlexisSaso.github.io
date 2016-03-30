@@ -3,11 +3,17 @@ function setup(){
                           new THREE.MeshNormalMaterial());
   cubo2 = new THREE.Mesh( new THREE.BoxGeometry( 1, 20, 1),
                           new THREE.MeshNormalMaterial());
+  cubo3 = new THREE.Mesh( new THREE.BoxGeometry( 20, 1, 1),
+                          new THREE.MeshNormalMaterial());
+  cubo4 = new THREE.Mesh( new THREE.BoxGeometry( 20, 1, 1),
+                          new THREE.MeshNormalMaterial());
   pelota = new THREE.Mesh( new THREE.SphereGeometry( 0.5 ),
                           new THREE.MeshNormalMaterial());
                           
   cubo1.position.x = 7;
   cubo2.position.x = -7;
+  cubo3.position.y = 7;
+  cubo4.position.y = -7;
   pelota.position.y = -8;
   
   camara = new THREE.PerspectiveCamera();
