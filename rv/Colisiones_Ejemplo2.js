@@ -27,7 +27,7 @@ function setup(){
                     window.innerHeight*.95 );
   document.body.appendChild( renderer.domElement );
 
-  step = 0.01;
+  step = 0.1;
 }
 
 function loop(){
@@ -39,7 +39,7 @@ function loop(){
       step= -step;
       
   pelota.position.x += step;
-  pelota.position.y += 0.005;
+  pelota.position.y += 0.0001;
   pelota.rotation.z += -step;
   raycaster1.set( pelota.position, new THREE.Vector3(1,0,0) );
   raycaster2.set( pelota.position, new THREE.Vector3(-1,0,0) );
