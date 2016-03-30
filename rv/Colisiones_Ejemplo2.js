@@ -8,7 +8,7 @@ function setup(){
                           
   cubo1.position.x = 7;
   cubo2.position.x = -7;
-  pelota.position.y = -10
+  pelota.position.y = -5
   
   camara = new THREE.PerspectiveCamera();
   camara.position.z = 20;
