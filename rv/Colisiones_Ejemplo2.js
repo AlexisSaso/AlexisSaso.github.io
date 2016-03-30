@@ -25,6 +25,8 @@ function setup(){
   escena = new THREE.Scene();
   escena.add ( cubo1 );
   escena.add ( cubo2 );
+  escena.add ( cubo3 );
+  escena.add ( cubo4 );
   escena.add ( pelota );
   escena.add ( camara );
   
