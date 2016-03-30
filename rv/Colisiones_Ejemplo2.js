@@ -37,7 +37,7 @@ function setup(){
   document.body.appendChild( renderer.domElement );
 
   stepx = 0.1;
-  stepy = 0.001;
+  stepy = 0.008;
 }
 
 function loop(){
