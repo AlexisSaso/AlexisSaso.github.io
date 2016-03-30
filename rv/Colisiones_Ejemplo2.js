@@ -1,7 +1,7 @@
 function setup(){
-  cubo1 = new THREE.Mesh( new THREE.BoxGeometry( 1, 15, 1),
+  cubo1 = new THREE.Mesh( new THREE.BoxGeometry( 1, 18, 1),
                           new THREE.MeshNormalMaterial());
-  cubo2 = new THREE.Mesh( new THREE.BoxGeometry( 1, 15, 1),
+  cubo2 = new THREE.Mesh( new THREE.BoxGeometry( 1, 18, 1),
                           new THREE.MeshNormalMaterial());
   cubo3 = new THREE.Mesh( new THREE.BoxGeometry( 15, 1, 1),
                           new THREE.MeshNormalMaterial());
@@ -10,8 +10,8 @@ function setup(){
   pelota = new THREE.Mesh( new THREE.SphereGeometry( 0.5 ),
                           new THREE.MeshNormalMaterial());
                           
-  cubo1.position.x = 7;
-  cubo2.position.x = -7;
+  cubo1.position.x = 9;
+  cubo2.position.x = -9;
   cubo3.position.y = 7;
   cubo4.position.y = -7;
   
@@ -36,8 +36,8 @@ function setup(){
                     window.innerHeight*.95 );
   document.body.appendChild( renderer.domElement );
 
-  stepx = 1;
-  stepy = 3;
+  stepx = 0.01;
+  stepy = 0.01;
 }
 
 function loop(){
