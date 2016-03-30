@@ -36,8 +36,8 @@ function setup(){
                     window.innerHeight*.95 );
   document.body.appendChild( renderer.domElement );
 
-  stepx = 0.1;
-  stepy = 0.8;
+  stepx = 1;
+  stepy = 3;
 }
 
 function loop(){
