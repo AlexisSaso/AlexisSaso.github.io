@@ -50,8 +50,8 @@ function loop(){
       (obstaculo2.length > 0 && (obstaculo2[0].distance <= 0.5)))
       stepx= -stepx;
       
-  if ((obstaculo3.length > 0 && (obstaculo1[0].distance <= 0.5)) ||
-      (obstaculo4.length > 0 && (obstaculo2[0].distance <= 0.5)))
+  if ((obstaculo3.length > 0 && (obstaculo3[0].distance <= 0.5)) ||
+      (obstaculo4.length > 0 && (obstaculo4[0].distance <= 0.5)))
       stepy= -stepy;
       
   pelota.position.x += stepx;
