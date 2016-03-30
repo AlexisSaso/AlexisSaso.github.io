@@ -1,12 +1,12 @@
 function setup(){
   cubo1 = new THREE.Mesh( new THREE.BoxGeometry( 1, 15, 5),
-                          new THREE.MeshNormalMaterial());
+                          new THREE.MeshLambertMaterial({color: 0xFF0000}));
   cubo2 = new THREE.Mesh( new THREE.BoxGeometry( 1, 15, 5),
-                          new THREE.MeshNormalMaterial());
+                          new THREE.MeshLambertMaterial({color: 0xFF0000}));
   cubo3 = new THREE.Mesh( new THREE.BoxGeometry( 17, 1, 5),
-                          new THREE.MeshNormalMaterial());
+                          new THREE.MeshLambertMaterial({color: 0xFF0000}));
   cubo4 = new THREE.Mesh( new THREE.BoxGeometry( 17, 1, 5),
-                          new THREE.MeshNormalMaterial());
+                          new THREE.MeshLambertMaterial({color: 0xFF0000}));
   pelota = new THREE.Mesh( new THREE.SphereGeometry( 0.5 ),
                           new THREE.MeshNormalMaterial());
                           
