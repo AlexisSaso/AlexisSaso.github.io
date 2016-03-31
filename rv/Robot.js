@@ -12,9 +12,9 @@ function setup(){
   brazoI.position.x=2.5;
   brazoD.position.x=-2.5;
   pieD.position.y=-2;
-  pieD.position.x=0.5;
+  pieD.position.x=1;
   pieI.position.y=-2;
-  pieI.position.x=-0.5;
+  pieI.position.x=-1;
   
   
   var forma = new THREE.Geometry();
@@ -31,7 +31,7 @@ function setup(){
   escena.add(malla);
   
   camara = new THREE.PerspectiveCamera();
-  camara.position.z = 10;
+  camara.position.z = 30;
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95);
@@ -42,7 +42,7 @@ function setup(){
   requestAnimationFrame(loop);
   
   //malla.rotation.x += 0.01;
-  //malla.rotation.y += 0.01;
+  malla.rotation.y += 0.01;
   
   renderer.render( escena, camara);
   }
