@@ -1,7 +1,7 @@
 function setup(){
   var esferaForma = new THREE.SphereGeometry(3);
   var cilindroForma = new THREE.CylinderGeometry(3, 0.5, 0.5);
-  var rectanguloForma = new THREE.BoxGeometry(0.5,1,3);
+  var rectanguloForma = new THREE.BoxGeometry(0.5,1,1);
   
   var cuerpo = new THREE.Mesh(esferaForma);
   var brazoI = new THREE.Mesh(cilindroForma);
@@ -15,6 +15,8 @@ function setup(){
   pieD.position.x=1;
   pieI.position.y=-3;
   pieI.position.x=-1;
+  pieD.position.z=1;
+  pieI.position.z=1;
   
   
   var forma = new THREE.Geometry();
