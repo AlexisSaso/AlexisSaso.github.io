@@ -44,10 +44,10 @@ if (Math.abs(pieD.rotation.x) > .3 )
 if (Math.abs(brazoD.rotation.y) > .3 )
   stepbrazo = -stepbrazo;
 
-brazoD.rotation.x += stepbrazo;
-brazoI.rotation.x -= stepbrazo;
-pieD.rotation.y += step;
-pieI.rotation.y -= step;
+brazoD.rotation.y += stepbrazo;
+brazoI.rotation.y -= stepbrazo;
+pieD.rotation.x += step;
+pieI.rotation.x -= step;
 }
 
 var escena, camara, renderer;
