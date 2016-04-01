@@ -24,10 +24,10 @@ this.add(this.piernaD);
 this.add(this.piernaI);
 }
 
-Cuerpo.prototype = new THREE.Object3D;
+Completo.prototype = new THREE.Object3D;
 
 function setup(){
-body = new Cuerpo;
+body = new Completo;
 step = .01;
 escena = new THREE.Scene();
 escena.add(body);
