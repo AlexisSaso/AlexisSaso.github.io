@@ -18,7 +18,8 @@ function setup(){
   pieD.position.z=1;
   pieI.position.z=1;
   
-  step  =.01;
+  step  =0.01;
+  stepbrazo = 0.01;
   
   escena = new THREE.Scene();
   escena.add(cuerpo);
@@ -39,18 +40,18 @@ requestAnimationFrame( loop );
 renderer.render (escena, camara);
 if (Math.abs(pieD.rotation.x) > .3 )
   step = -step;
+
+if (Math.abs(brazoD.rotation.y) > .3 )
+  stepbrazo = -stepbrazo;
+
+brazoD.rotation.x += stepbrazo;
+brazoI.rotation.x -= stepbrazo;
 pieD.rotation.x += step;
 pieI.rotation.x -= step;
 }
 
-if (Math.abs(brazoD.rotation.y) > .3 )
-  step = -step;
-brazoD.rotation.x += step;
-brazoI.rotation.x -= step;
-}
-
 var escena, camara, renderer;
-var step;
+var step, stepbrazo;
 var pieD , pieI;
 setup();
 loop();
