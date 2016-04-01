@@ -6,8 +6,8 @@ function setup(){
   var cuerpo = new THREE.Mesh(esferaForma);
   var brazoI = new THREE.Mesh(cilindroForma);
   var brazoD = new THREE.Mesh(cilindroForma);
-  var pieI = new THREE.Mesh(rectanguloForma);
-  var pieD = new THREE.Mesh(rectanguloForma);
+  pieI = new THREE.Mesh(rectanguloForma);
+  pieD = new THREE.Mesh(rectanguloForma);
   
   brazoI.position.x=2.5;
   brazoD.position.x=-2.5;
@@ -44,6 +44,6 @@ pieI.rotation.z -= step;
 
 var escena, camara, renderer;
 var step;
-
+var pieD , pieI;
 setup();
 loop();
