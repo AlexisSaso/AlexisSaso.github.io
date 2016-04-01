@@ -58,6 +58,8 @@ kirby.brazoD.rotation.z += stepbrazo;
 kirby.brazoI.rotation.z += stepbrazo;
 kirby.pieD.rotation.x += step;
 kirby.pieI.rotation.x -= step;
+kirby.rotation.x=0.01;
+kirby.rotation.y=0.01;
 }
 
 var escena, camara, renderer;
