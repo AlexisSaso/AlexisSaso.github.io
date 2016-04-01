@@ -21,7 +21,7 @@ function setup(){
   brazoI.rotation.z=-1.5;
   
   step  =0.01;
-  stepbrazo = 0.0166666666666666666666666666666666666666666666666666666666666666666666666666666;
+  stepbrazo = 0.017;
   
   escena = new THREE.Scene();
   escena.add(cuerpo);
