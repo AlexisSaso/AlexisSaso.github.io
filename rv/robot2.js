@@ -26,7 +26,7 @@ function setup(){
     escena.add(pieI);
     
  camara = new THREE.PerspectiveCamera();
-  camara.position.z = 30;
+  camara.position.x = 30;
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95);
