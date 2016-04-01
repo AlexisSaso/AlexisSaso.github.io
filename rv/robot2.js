@@ -1,6 +1,6 @@
 function setup(){
   var esferaForma = new THREE.SphereGeometry(3);
-  var cilindroForma = new THREE.CylinderGeometry(0.5,0.5,3);
+  var cilindroForma = new THREE.CylinderGeometry(0.5,0.5,4);
   var rectanguloForma = new THREE.BoxGeometry(0.5,1,2);
   
   var cuerpo = new THREE.Mesh(esferaForma);
@@ -17,8 +17,8 @@ function setup(){
   pieI.position.x=-1;
   pieD.position.z=1;
   pieI.position.z=1;
-  brazoD.rotation.z=0.5;
-  brazoI.rotation.z=-0.5;
+  brazoD.rotation.z=1;
+  brazoI.rotation.z=-1;
   
   step  =0.01;
   stepbrazo = 0.01;
