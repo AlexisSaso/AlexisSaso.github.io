@@ -3,7 +3,7 @@ function Completo(){
   this.cilindroForma = (new THREE.CylinderGeometry(0.5,0.5,4));
   this.rectanguloForma = (new THREE.BoxGeometry(0.5,1,2));
   
-  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshBasicMaterial({color:0xF706DB));
+  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshBasicMaterial({color:0xF706DB}));
   this.brazoI = new THREE.Mesh(this.cilindroForma);
   this.brazoD = new THREE.Mesh(this.cilindroForma);
   this.pieI = new THREE.Mesh(this.rectanguloForma);
