@@ -9,8 +9,8 @@ function setup(){
   pieI = new THREE.Mesh(rectanguloForma);
   pieD = new THREE.Mesh(rectanguloForma);
   
-  brazoI.position.x=2;
-  brazoD.position.x=-2;
+  brazoI.position.x=2.25;
+  brazoD.position.x=-2.25;
   pieD.position.y=-3;
   pieD.position.x=1;
   pieI.position.y=-3;
