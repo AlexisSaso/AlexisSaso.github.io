@@ -25,38 +25,14 @@ function setup(){
     escena.add(pieI);
     
     function Pierna(){
-THREE.Object3D.call(this);
-
-
-this.pie.position.y=-4.5;
-this.pie.position.x=1;
-this.add(this.pie);
-}
 
 Pierna.prototype = new THREE.Object3D;
-
-function setup(){
-var cuerpo = new THREE.Mesh( new THREE.CylinderGeometry(1,2,5,10) );
-piernaD = new Pierna();
-piernaI = new Pierna();
-cuerpo.position.y=2;
-piernaD.position.z=-1;
-piernaI.position.z=1;
-step = .01;
-escena = new THREE.Scene();
-escena.add(cuerpo);
-camara = new THREE.PerspectiveCamera();
-camara.position.z=20;
-
-renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerHeight*.95, window.innerHeight*.95);
-document.body.appendChild(renderer.domElement);
-}
 
 function loop(){
 requestAnimationFrame( loop );
 renderer.render (escena, camara);
 
+step = .01;
 if (Math.abs(pieD.rotation.z) > .5 )
   step = -step;
 pieD.rotation.z += step;
