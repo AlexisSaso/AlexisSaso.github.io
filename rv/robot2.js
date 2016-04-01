@@ -4,10 +4,10 @@ function Completo(){
   this.rectanguloForma = new THREE.BoxGeometry(0.5,1,2);
   
   this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3));
-  this.brazoI = new THREE.Mesh(cilindroForma);
-  this.brazoD = new THREE.Mesh(cilindroForma);
-  this.pieI = new THREE.Mesh(rectanguloForma);
-  this.pieD = new THREE.Mesh(rectanguloForma);
+  this.brazoI = new THREE.Mesh(this.cilindroForma);
+  this.brazoD = new THREE.Mesh(this.cilindroForma);
+  this.pieI = new THREE.Mesh(this.rectanguloForma);
+  this.pieD = new THREE.Mesh(this.rectanguloForma);
   
   this.brazoI.position.x=2.3;
   this.brazoD.position.x=-2.3;
