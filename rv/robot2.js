@@ -1,12 +1,11 @@
 function Completo(){
   THREE.Object3D.call(this);
-  this.rectanguloForma = (new THREE.BoxGeometry(0.5,1,2));
   
   this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshBasicMaterial({color:0xF706DB}));
   this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({color:0xF706DB}));
   this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({color:0xF706DB}));
-  this.pieI = new THREE.Mesh(this.rectanguloForma);
-  this.pieD = new THREE.Mesh(this.rectanguloForma);
+  this.pieI = new THREE.Mesh(new THREE.BoxGeometry(0.5,1,2),new THREE.MeshBasicMaterial({color:0xF70E45}));
+  this.pieD = new THREE.Mesh(new THREE.BoxGeometry(0.5,1,2),new THREE.MeshBasicMaterial({color:0xF70E45}));
   
   this.brazoI.position.x=2.3;
   this.brazoD.position.x=-2.3;
