@@ -35,7 +35,7 @@ function setup(){
 function loop(){
 requestAnimationFrame( loop );
 renderer.render (escena, camara);
-if (Math.abs(pieD.rotation.x) > .5 )
+if (Math.abs(pieD.rotation.x) > .3 )
   step = -step;
 pieD.rotation.x += step;
 pieI.rotation.x -= step;
