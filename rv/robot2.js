@@ -7,16 +7,16 @@ function Completo(){
   this.pieI = new THREE.Mesh(new THREE.BoxGeometry(0.5,1,2),new THREE.MeshBasicMaterial({color:0xF70E45}));
   this.pieD = new THREE.Mesh(new THREE.BoxGeometry(0.5,1,2),new THREE.MeshBasicMaterial({color:0xF70E45}));
   
-  this.brazoI.position.x=2.3;
-  this.brazoD.position.x=-2.3;
+  this.brazoI.position.z=2.3;
+  this.brazoD.position.z=-2.3;
   this.pieD.position.y=-3;
-  this.pieD.position.x=1;
-  this.pieI.position.y=-3;
-  this.pieI.position.x=-1;
   this.pieD.position.z=1;
-  this.pieI.position.z=1;
-  this.brazoD.rotation.z=1.5;
-  this.brazoI.rotation.z=-1.5;
+  this.pieI.position.y=-3;
+  this.pieI.position.z=-1;
+  this.pieD.position.x=1;
+  this.pieI.position.x=1;
+  this.brazoD.rotation.y=1.5;
+  this.brazoI.rotation.y=-1.5;
   
   this.add(this.pieI)
   this.add(this.pieD)
@@ -46,16 +46,16 @@ function setup(){
 function loop(){
 requestAnimationFrame( loop );
 renderer.render (escena, camara);
-if (Math.abs(kirby.pieD.rotation.x) > .3 )
+if (Math.abs(kirby.pieD.rotation.z) > .3 )
   step = -step;
 
-if (Math.abs(kirby.brazoD.rotation.z) > 2 || Math.abs(kirby.brazoD.rotation.z) < 1)
+if (Math.abs(kirby.brazoD.rotation.y) > 2 || Math.abs(kirby.brazoD.rotation.y) < 1)
   stepbrazo = -stepbrazo;
 
-kirby.brazoD.rotation.z += stepbrazo;
-kirby.brazoI.rotation.z += stepbrazo;
-kirby.pieD.rotation.x += step;
-kirby.pieI.rotation.x -= step;
+kirby.brazoD.rotation.y += stepbrazo;
+kirby.brazoI.rotation.y += stepbrazo;
+kirby.pieD.rotation.z += step;
+kirby.pieI.rotation.z -= step;
 kirby.rotation.x += 0.01;
 kirby.rotation.y += 0.01;
 }
