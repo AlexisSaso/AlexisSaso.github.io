@@ -4,8 +4,8 @@ function setup(){
   var rectanguloForma = new THREE.BoxGeometry(0.5,1,2);
   
   var cuerpo = new THREE.Mesh(esferaForma);
-  var brazoI = new THREE.Mesh(cilindroForma);
-  var brazoD = new THREE.Mesh(cilindroForma);
+  brazoI = new THREE.Mesh(cilindroForma);
+  brazoD = new THREE.Mesh(cilindroForma);
   pieI = new THREE.Mesh(rectanguloForma);
   pieD = new THREE.Mesh(rectanguloForma);
   
@@ -52,6 +52,6 @@ pieI.rotation.x -= step;
 
 var escena, camara, renderer;
 var step, stepbrazo;
-var pieD , pieI;
+var pieD , pieI, brazoD, brazoI;
 setup();
 loop();
