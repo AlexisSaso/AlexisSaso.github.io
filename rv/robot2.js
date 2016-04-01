@@ -27,7 +27,6 @@ function setup(){
     
  camara = new THREE.PerspectiveCamera();
   camara.position.z = 30;
-  camara.position.y = 30;
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95);
@@ -40,6 +39,10 @@ if (Math.abs(pieD.rotation.x) > .3 )
   step = -step;
 pieD.rotation.x += step;
 pieI.rotation.x -= step;
+pieD.rotation.z += 0.01;
+pieI.rotation.z += 0.01;
+cuerpo.rotation.z += 0.01;
+
 }
 
 var escena, camara, renderer;
