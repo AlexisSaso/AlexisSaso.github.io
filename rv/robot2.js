@@ -1,6 +1,6 @@
 function setup(){
   var esferaForma = new THREE.SphereGeometry(3);
-  var cilindroForma = new THREE.CylinderGeometry(2, 0.5,0.5);
+  var cilindroForma = new THREE.CylinderGeometry(2,1,1);
   var rectanguloForma = new THREE.BoxGeometry(0.5,1,2);
   
   var cuerpo = new THREE.Mesh(esferaForma);
