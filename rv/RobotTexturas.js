@@ -5,11 +5,11 @@ function Completo(){
   var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color.jpg');
   var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Zapato.jpg');  
   
-  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshPhongMaterial({map:cara}));
-  this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
-  this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
-  this.pieI = new THREE.Mesh(new THREE.BoxGeometry(0.5,1,2),new THREE.MeshPhongMaterial({map:pies}));
-  this.pieD = new THREE.Mesh(new THREE.BoxGeometry(0.5,1,2),new THREE.MeshPhongMaterial({map:pies}));
+  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshBasicMaterial({map:cara}));
+  this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
+  this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
+  this.pieI = new THREE.Mesh(new THREE.BoxGeometry(0.5,1,2),new THREE.MeshBasicMaterial({map:pies}));
+  this.pieD = new THREE.Mesh(new THREE.BoxGeometry(0.5,1,2),new THREE.MeshBasicMaterial({map:pies}));
   
   this.brazoI.position.x=2.3;
   this.brazoD.position.x=-2.3;
@@ -66,8 +66,8 @@ kirby.brazoD.rotation.z += stepbrazo;
 kirby.brazoI.rotation.z += stepbrazo;
 kirby.pieD.rotation.x += step;
 kirby.pieI.rotation.x -= step;
-kirby.rotation.x += 0.01;
-kirby.rotation.y += 0.01;
+//kirby.rotation.x += 0.01;
+//kirby.rotation.y += 0.01;
 }
 
 var escena, camara, renderer;
