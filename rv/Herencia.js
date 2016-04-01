@@ -49,8 +49,6 @@ body.piernaD.rotation.z += step;
 body.piernaI.rotation.z -= step;
 
 body.rotation.x += 0.01;
-body.rotation.y += 0.01;
-
 }
 
 var escena, camara, renderer;
