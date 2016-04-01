@@ -17,7 +17,7 @@ function setup(){
   pieI.position.x=-1;
   pieD.position.z=1;
   pieI.position.z=1;
-  brazoD.rotation.z=-0.5;
+  brazoD.rotation.z=0.5;
   brazoI.rotation.z=0.5;
   
   step  =0.01;
