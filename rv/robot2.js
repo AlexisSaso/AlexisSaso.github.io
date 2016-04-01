@@ -47,7 +47,7 @@ if (Math.abs(brazoD.rotation.z) > 0.7 )
   stepbrazo = -stepbrazo;
 
 brazoD.rotation.z += stepbrazo;
-brazoI.rotation.z += stepbrazo;
+brazoI.rotation.z -= stepbrazo;
 pieD.rotation.x += step;
 pieI.rotation.x -= step;
 }
