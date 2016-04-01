@@ -11,18 +11,26 @@ this.add(this.pie);
 
 Pierna.prototype = new THREE.Object3D;
 
+function Completo(){
+THREE.Object3D.call(this);  
+this.cuerpo = new THREE.Mesh( new THREE.CylinderGeometry(1,2,5,10) );
+this.piernaD = new Pierna();
+this.piernaI = new Pierna();
+this.cuerpo.position.y=2;
+this.piernaD.position.z=-1;
+this.piernaI.position.z=1;
+this.add(this.cuerpo);
+this.add(this.piernaD);
+this.add(this.piernaI);
+}
+
+Cuerpo.prototype = new THREE.Object3D;
+
 function setup(){
-var cuerpo = new THREE.Mesh( new THREE.CylinderGeometry(1,2,5,10) );
-piernaD = new Pierna();
-piernaI = new Pierna();
-cuerpo.position.y=2;
-piernaD.position.z=-1;
-piernaI.position.z=1;
+body = new Cuerpo;
 step = .01;
 escena = new THREE.Scene();
-escena.add(cuerpo);
-escena.add(piernaD);
-escena.add(piernaI);
+escena.add(body);
 camara = new THREE.PerspectiveCamera();
 camara.position.z=20;
 
@@ -37,8 +45,12 @@ renderer.render (escena, camara);
 
 if (Math.abs(piernaD.rotation.z) > .5 )
   step = -step;
-piernaD.rotation.z += step;
-piernaI.rotation.z -= step;
+body.piernaD.rotation.z += step;
+body.piernaI.rotation.z -= step;
+
+body.rotation.x += 0.01;
+body.rotation.y += 0.01;
+
 }
 
 var escena, camara, renderer;
