@@ -36,10 +36,10 @@ function loop(){
 requestAnimationFrame( loop );
 renderer.render (escena, camara);
 
-if (Math.abs(pieD.rotation.z) > .5 )
+if (Math.abs(pieD.rotation.x) > .5 )
   step = -step;
-pieD.rotation.z += step;
-pieI.rotation.z -= step;
+pieD.rotation.x += step;
+pieI.rotation.x -= step;
 }
 
 var escena, camara, renderer;
