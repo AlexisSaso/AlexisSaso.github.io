@@ -18,21 +18,18 @@ function setup(){
   pieD.position.z=1;
   pieI.position.z=1;
   
+  step  =.01;
   
   escena = new THREE.Scene();
   escena.add(malla);
    escena.add(pieD);
     escena.add(pieI);
     
-    function Pierna(){
-
-Pierna.prototype = new THREE.Object3D;
 
 function loop(){
 requestAnimationFrame( loop );
 renderer.render (escena, camara);
 
-step = .01;
 if (Math.abs(pieD.rotation.z) > .5 )
   step = -step;
 pieD.rotation.z += step;
@@ -44,26 +41,3 @@ var step, pieD, pieI;
 
 setup();
 loop();
-
-  
-  camara = new THREE.PerspectiveCamera();
-  camara.position.z = 30;
-  
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.innerHeight*.95, window.innerHeight*.95);
-  document.body.appendChild(renderer.domElement);
-  }
-  
-  function loop(){
-  requestAnimationFrame(loop);
-  
-  //malla.rotation.x += 0.01;
-  malla.rotation.y += 0.01;
-  
-  renderer.render( escena, camara);
-  }
-  
-  var escena, camara, renderer, malla;
-  
-  setup();
-  loop();
