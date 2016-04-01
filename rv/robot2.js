@@ -43,6 +43,12 @@ pieD.rotation.x += step;
 pieI.rotation.x -= step;
 }
 
+if (Math.abs(brazoD.rotation.y) > .3 )
+  step = -step;
+brazoD.rotation.x += step;
+brazoI.rotation.x -= step;
+}
+
 var escena, camara, renderer;
 var step;
 var pieD , pieI;
