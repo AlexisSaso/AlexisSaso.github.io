@@ -21,7 +21,7 @@ function setup(){
   step  =.01;
   
   escena = new THREE.Scene();
-  escena.add(malla);
+  escena.add(cuerpo);
    escena.add(pieD);
     escena.add(pieI);
     
@@ -43,7 +43,7 @@ pieI.rotation.z -= step;
 }
 
 var escena, camara, renderer;
-var step, pieD, pieI;
+var step;
 
 setup();
 loop();
