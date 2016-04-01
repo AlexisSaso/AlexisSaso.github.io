@@ -43,7 +43,7 @@ function loop(){
 requestAnimationFrame( loop );
 renderer.render (escena, camara);
 
-if (Math.abs(piernaD.rotation.z) > .5 )
+if (Math.abs(body.piernaD.rotation.z) > .5 )
   step = -step;
 body.piernaD.rotation.z += step;
 body.piernaI.rotation.z -= step;
