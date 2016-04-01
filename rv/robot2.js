@@ -43,7 +43,7 @@ renderer.render (escena, camara);
 if (Math.abs(pieD.rotation.x) > .3 )
   step = -step;
 
-if (Math.abs(brazoD.rotation.z) > 7 )
+if (Math.abs(brazoD.rotation.z) > 6 )
   stepbrazo = -stepbrazo;
 
 brazoD.rotation.z += stepbrazo;
