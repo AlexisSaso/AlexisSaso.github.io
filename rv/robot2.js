@@ -25,7 +25,13 @@ function setup(){
    escena.add(pieD);
     escena.add(pieI);
     
-
+ camara = new THREE.PerspectiveCamera();
+  camara.position.z = 30;
+  
+  renderer = new THREE.WebGLRenderer();
+  renderer.setSize( window.innerHeight*.95, window.innerHeight*.95);
+  document.body.appendChild(renderer.domElement);
+}
 function loop(){
 requestAnimationFrame( loop );
 renderer.render (escena, camara);
