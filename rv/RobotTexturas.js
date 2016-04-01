@@ -19,8 +19,8 @@ function Completo(){
   this.pieI.position.z=-1;
   this.pieD.position.x=1;
   this.pieI.position.x=1;
-  this.brazoD.rotation.y=1.5;
-  this.brazoI.rotation.y=-1.5;
+  this.brazoD.rotation.x=1.5;
+  this.brazoI.rotation.x=-1.5;
   
   this.add(this.pieI)
   this.add(this.pieD)
@@ -59,15 +59,16 @@ renderer.render (escena, camara);
 if (Math.abs(kirby.pieD.rotation.z) > .3 )
   step = -step;
 
-if (Math.abs(kirby.brazoD.rotation.y) > 2 || Math.abs(kirby.brazoD.rotation.y) < 1)
+if (Math.abs(kirby.brazoD.rotation.x) > 2 || Math.abs(kirby.brazoD.rotation.x) < 1)
   stepbrazo = -stepbrazo;
 
-kirby.brazoD.rotation.y += stepbrazo;
-kirby.brazoI.rotation.y += stepbrazo;
+kirby.brazoD.rotation.x += stepbrazo;
+kirby.brazoI.rotation.x += stepbrazo;
 kirby.pieD.rotation.z += step;
 kirby.pieI.rotation.z -= step;
-kirby.rotation.x += 0.01;
-//kirby.rotation.y += 0.01;
+
+//kirby.rotation.x += 0.01;
+kirby.rotation.y += 0.01;
 }
 
 var escena, camara, renderer;
