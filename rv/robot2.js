@@ -1,6 +1,6 @@
 function Completo(){
   THREE.Object3D.call(this);
-  this.cilindroForma = (new THREE.CylinderGeometry(0.5,0.5,4));
+  this.cilindroForma = (new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({color:0xF706DB}));
   this.rectanguloForma = (new THREE.BoxGeometry(0.5,1,2));
   
   this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshBasicMaterial({color:0xF706DB}));
