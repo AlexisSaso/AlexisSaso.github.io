@@ -17,8 +17,8 @@ function setup(){
   pieI.position.x=-1;
   pieD.position.z=1;
   pieI.position.z=1;
-  brazoD.rotation.z=-1;
-  brazoI.rotation.z=1;
+  brazoD.rotation.z=-0.5;
+  brazoI.rotation.z=0.5;
   
   step  =0.01;
   stepbrazo = 0.01;
@@ -43,7 +43,7 @@ renderer.render (escena, camara);
 if (Math.abs(pieD.rotation.x) > .3 )
   step = -step;
 
-if (Math.abs(brazoD.rotation.z) > 2 )
+if (Math.abs(brazoD.rotation.z) > 0.7 )
   stepbrazo = -stepbrazo;
 
 brazoD.rotation.z += stepbrazo;
