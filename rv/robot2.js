@@ -26,7 +26,7 @@ function setup(){
     escena.add(pieI);
     
  camara = new THREE.PerspectiveCamera();
-  camara.position.x = 30;
+  camara.position.z = 30;
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight*.95, window.innerHeight*.95);
@@ -35,7 +35,9 @@ function setup(){
 function loop(){
 requestAnimationFrame( loop );
 renderer.render (escena, camara);
-
+cuerpo.rotation.z=0.01;
+pieI.rotation.z=0.01;
+pieD.rotation.z=0.01;
 if (Math.abs(pieD.rotation.x) > .5 )
   step = -step;
 pieD.rotation.x += step;
