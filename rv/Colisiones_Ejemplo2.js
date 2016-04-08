@@ -69,7 +69,7 @@ function setup(){
   document.body.appendChild( renderer.domElement );
 
   stepx = 0.05;
-  stepy = 0.05;
+  stepy = 0.03;
 }
 
 function loop(){
