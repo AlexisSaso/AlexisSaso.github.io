@@ -74,6 +74,8 @@ function setup(){
   stepy = 0.03;
   step  =0.01;
   stepbrazo = 0.017;
+  rotacionx=1;
+  rotaciony=1;
 }
 
 function loop(){
@@ -83,13 +85,15 @@ function loop(){
   obstaculo4 = raycaster4.intersectObject( cubo4 );
   
   if ((obstaculo1.length > 0 && (obstaculo1[0].distance <= 3)) ||
-      (obstaculo2.length > 0 && (obstaculo2[0].distance <= 3)))
+      (obstaculo2.length > 0 && (obstaculo2[0].distance <= 3))){
+      rotaciony= -rotaciony;  
       stepx= -stepx;
-      
+      }
   if ((obstaculo3.length > 0 && (obstaculo3[0].distance <=3)) ||
-      (obstaculo4.length > 0 && (obstaculo4[0].distance <=3)))
+      (obstaculo4.length > 0 && (obstaculo4[0].distance <=3))){
+       rotacionx= -rotacionx;
       stepy= -stepy;
-      
+      }
   if (Math.abs(pelota.pieD.rotation.z) > .3 )
   step = -step;
 
@@ -100,6 +104,8 @@ function loop(){
   pelota.brazoI.rotation.x += stepbrazo;
   pelota.pieD.rotation.z += step;
   pelota.pieI.rotation.z -= step;
+  pelota.rotation.y=1+rotaciony;
+  pelota.rotation.x=1+rotacionx;
 
       
   pelota.position.x += stepx;
