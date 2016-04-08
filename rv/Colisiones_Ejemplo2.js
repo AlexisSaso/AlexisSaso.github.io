@@ -48,7 +48,7 @@ function setup(){
   cubo4.position.y = -28;
   
   camara = new THREE.PerspectiveCamera();
-  camara.position.z = 40;
+  camara.position.z = 70;
   
     raycaster1 = new THREE.Raycaster( pelota.position, new THREE.Vector3(1,0,0));
     raycaster2 = new THREE.Raycaster( pelota.position, new THREE.Vector3(-1,0,0));
