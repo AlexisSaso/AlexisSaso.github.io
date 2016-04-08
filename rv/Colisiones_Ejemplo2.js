@@ -32,9 +32,9 @@ function Completo(){
 Completo.prototype = new THREE.Object3D();
 
 function setup(){
-  cubo1 = new THREE.Mesh( new THREE.BoxGeometry( 1, 56, 5),
+  cubo1 = new THREE.Mesh( new THREE.BoxGeometry( 1, 57, 5),
                           new THREE.MeshNormalMaterial());
-  cubo2 = new THREE.Mesh( new THREE.BoxGeometry( 1, 56, 5),
+  cubo2 = new THREE.Mesh( new THREE.BoxGeometry( 1, 57, 5),
                           new THREE.MeshNormalMaterial());
   cubo3 = new THREE.Mesh( new THREE.BoxGeometry( 60, 1, 5),
                           new THREE.MeshNormalMaterial());
