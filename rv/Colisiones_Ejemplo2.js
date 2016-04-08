@@ -1,3 +1,36 @@
+function Completo(){
+  THREE.Object3D.call(this);
+  THREE.ImageUtils.crossOrigin = '';
+  var cara = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/cara kirby grande.jpg');
+  var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color_kirby.jpg');
+  var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Zapato.jpg');  
+  
+  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshBasicMaterial({map:cara}));
+  this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
+  this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
+  this.pieI = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
+  this.pieD = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
+  
+  this.brazoI.position.z=2.3;
+  this.brazoD.position.z=-2.3;
+  this.pieD.position.y=-3;
+  this.pieD.position.z=1;
+  this.pieI.position.y=-3;
+  this.pieI.position.z=-1;
+  this.pieD.position.x=1;
+  this.pieI.position.x=1;
+  this.brazoD.rotation.x=1.5;
+  this.brazoI.rotation.x=-1.5;
+  
+  this.add(this.pieI)
+  this.add(this.pieD)
+  this.add(this.brazoI)
+  this.add(this.brazoD)
+  this.add(this.cuerpo)
+}
+
+Completo.prototype = new THREE.Object3D();
+
 function setup(){
   cubo1 = new THREE.Mesh( new THREE.BoxGeometry( 1, 15, 5),
                           new THREE.MeshNormalMaterial());
@@ -7,8 +40,7 @@ function setup(){
                           new THREE.MeshNormalMaterial());
   cubo4 = new THREE.Mesh( new THREE.BoxGeometry( 17, 1, 5),
                           new THREE.MeshNormalMaterial());
-  pelota = new THREE.Mesh( new THREE.SphereGeometry( 0.5 ),
-                          new THREE.MeshNormalMaterial());
+  pelota = new Completo();
                           
   cubo1.position.x = 9;
   cubo2.position.x = -9;
