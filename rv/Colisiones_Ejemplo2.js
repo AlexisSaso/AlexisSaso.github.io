@@ -46,8 +46,8 @@ function setup(){
   cubo2.position.x = -30;
   cubo3.position.y = 28;
   cubo4.position.y = -28;
-  pelota.rotation.x=1;
-  pelota.rotation.y=1;
+  pelota.rotation.x=0;
+  pelota.rotation.y=0;
   
   camara = new THREE.PerspectiveCamera();
   camara.position.z = 70;
