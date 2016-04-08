@@ -46,8 +46,6 @@ function setup(){
   cubo2.position.x = -30;
   cubo3.position.y = 28;
   cubo4.position.y = -28;
-  pelota.rotation.x=0;
-  pelota.rotation.y=0;
   
   camara = new THREE.PerspectiveCamera();
   camara.position.z = 70;
@@ -74,8 +72,8 @@ function setup(){
   stepy = 0.03;
   step  =0.01;
   stepbrazo = 0.017;
-  rotacionx=1;
-  rotaciony=1;
+  rotacionx=-1;
+  rotaciony=-1;
 }
 
 function loop(){
