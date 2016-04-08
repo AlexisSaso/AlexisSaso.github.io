@@ -88,10 +88,10 @@ function loop(){
       (obstaculo4.length > 0 && (obstaculo4[0].distance <=3)))
       stepy= -stepy;
       
-  if (Math.abs(kirby.pieD.rotation.z) > .3 )
+  if (Math.abs(pelota.pieD.rotation.z) > .3 )
   step = -step;
 
-  if (Math.abs(kirby.brazoD.rotation.x) > 2 || Math.abs(kirby.brazoD.rotation.x) < 1)
+  if (Math.abs(pelota.brazoD.rotation.x) > 2 || Math.abs(pelota.brazoD.rotation.x) < 1)
   stepbrazo = -stepbrazo;
 
   pelota.brazoD.rotation.x += stepbrazo;
@@ -102,7 +102,6 @@ function loop(){
       
   pelota.position.x += stepx;
   pelota.position.y += stepy;
-  pelota.rotation.z += -stepx*stepy*10;
   raycaster1.set( pelota.position, new THREE.Vector3(1,0,0) );
   raycaster2.set( pelota.position, new THREE.Vector3(-1,0,0) );
   raycaster3.set( pelota.position, new THREE.Vector3(0,1,0) );
