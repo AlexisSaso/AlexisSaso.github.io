@@ -42,13 +42,13 @@ function setup(){
                           new THREE.MeshNormalMaterial());
   pelota = new Completo();
                           
-  cubo1.position.x = 9;
-  cubo2.position.x = -9;
-  cubo3.position.y = 7;
-  cubo4.position.y = -7;
+  cubo1.position.x = 30;
+  cubo2.position.x = -30;
+  cubo3.position.y = 28;
+  cubo4.position.y = -28;
   
   camara = new THREE.PerspectiveCamera();
-  camara.position.z = 20;
+  camara.position.z = 40;
   
     raycaster1 = new THREE.Raycaster( pelota.position, new THREE.Vector3(1,0,0));
     raycaster2 = new THREE.Raycaster( pelota.position, new THREE.Vector3(-1,0,0));
