@@ -36,9 +36,9 @@ function setup(){
                           new THREE.MeshNormalMaterial());
   cubo2 = new THREE.Mesh( new THREE.BoxGeometry( 1, 60, 5),
                           new THREE.MeshNormalMaterial());
-  cubo3 = new THREE.Mesh( new THREE.BoxGeometry( 60, 1, 5),
+  cubo3 = new THREE.Mesh( new THREE.BoxGeometry( 58, 1, 5),
                           new THREE.MeshNormalMaterial());
-  cubo4 = new THREE.Mesh( new THREE.BoxGeometry( 60, 1, 5),
+  cubo4 = new THREE.Mesh( new THREE.BoxGeometry( 58, 1, 5),
                           new THREE.MeshNormalMaterial());
   pelota = new Completo();
                           
