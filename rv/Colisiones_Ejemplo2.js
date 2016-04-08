@@ -78,8 +78,8 @@ function loop(){
   obstaculo3 = raycaster3.intersectObject( cubo3 );
   obstaculo4 = raycaster4.intersectObject( cubo4 );
   
-  if ((obstaculo1.length > completo && (obstaculo1[0].distance <= completo)) ||
-      (obstaculo2.length > completo && (obstaculo2[0].distance <= completo)))
+  if ((obstaculo1.length > pelota && (obstaculo1[0].distance <= pelota)) ||
+      (obstaculo2.length > pelota && (obstaculo2[0].distance <= pelota)))
       stepx= -stepx;
       
   if ((obstaculo3.length > 0 && (obstaculo3[0].distance <=3)) ||
