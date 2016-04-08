@@ -70,6 +70,8 @@ function setup(){
 
   stepx = 0.05;
   stepy = 0.03;
+  step  =0.01;
+  stepbrazo = 0.017;
 }
 
 function loop(){
@@ -86,6 +88,18 @@ function loop(){
       (obstaculo4.length > 0 && (obstaculo4[0].distance <=3)))
       stepy= -stepy;
       
+  if (Math.abs(kirby.pieD.rotation.z) > .3 )
+  step = -step;
+
+  if (Math.abs(kirby.brazoD.rotation.x) > 2 || Math.abs(kirby.brazoD.rotation.x) < 1)
+  stepbrazo = -stepbrazo;
+
+  pelota.brazoD.rotation.x += stepbrazo;
+  pelota.brazoI.rotation.x += stepbrazo;
+  pelota.pieD.rotation.z += step;
+  pelota.pieI.rotation.z -= step;
+
+      
   pelota.position.x += stepx;
   pelota.position.y += stepy;
   pelota.rotation.z += -stepx*stepy*10;
@@ -101,6 +115,7 @@ function loop(){
 var cubo1, cubo2, cubo3, cubo4, pelota, escena, camara, renderer;
 var raycaster1, raycaster2, reycaster3, reycaster4, step;
 var obstaculo1, obstaculo2, obstaculo3, obstaculo4;
+var step, stepbrazo, stepx, stepy;
 
 setup();
 loop();
