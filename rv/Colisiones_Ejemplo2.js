@@ -102,7 +102,7 @@ function loop(){
   pelota.brazoI.rotation.x += stepbrazo;
   pelota.pieD.rotation.z += step;
   pelota.pieI.rotation.z -= step;
-  pelota.rotation.y=2+rotaciony;
+  pelota.rotation.z=2+rotaciony;
   pelota.rotation.x=2+rotacionx;
 
       
