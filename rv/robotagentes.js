@@ -11,7 +11,7 @@ function kirby(x=0, y=0){
   var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color_kirby.jpg');
   var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Zapato.jpg');  
   
-  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshBasicMaterial({map:cara}));
+  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3,100,100),new THREE.MeshBasicMaterial({map:cara}));
   this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
   this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
   this.pieI = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
@@ -20,7 +20,21 @@ function kirby(x=0, y=0){
  this.sensor=new Sensor();
  //this.sensor2=new Sensor();
  this.actuator=new Array();
-  
+  this.cuerpo.scale.x=0.5;
+  this.cuerpo.scale.y=0.5;
+  this.cuerpo.scale.z=0.5;
+    this.brazoD.scale.x=0.5;
+  this.brazoD.scale.y=0.5;
+  this.brazoD.scale.z=0.5;
+    this.brazoI.scale.x=0.5;
+  this.brazoI.scale.y=0.5;
+  this.brazoI.scale.z=0.5;
+    this.pieD.scale.x=0.5;
+  this.pieD.scale.y=0.5;
+  this.pieD.scale.z=0.5;
+    this.pieI.scale.x=0.5;
+  this.pieI.scale.y=0.5;
+  this.pieI.scale.z=0.5;
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
   this.pieD.position.y=-3;
