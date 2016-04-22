@@ -51,7 +51,7 @@ Environment.prototype.setMap=function(map){
    if(map[i][j]==="x")
     this.add(new Wall(1, j-offset,-(i-offset)));
    else if(map[i][j]==="r")
-    this.add(new BB8(j-offset,-(i-offset)));
+    this.add(new kirby(j-offset,-(i-offset)));
   }
  }
 }	
