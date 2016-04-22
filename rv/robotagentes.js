@@ -155,7 +155,9 @@ function setup(){
  mapa[27] = "x                          x";
  mapa[28] = "x                          x";
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-
+ completo.scale.x=0.5;
+ completo.scale.y=0.5;
+ completo.scale.z=0.5;
  entorno=new Environment();
  entorno.setMap(mapa);
  luzPuntual = new THREE.PointLight(0xffffff);
