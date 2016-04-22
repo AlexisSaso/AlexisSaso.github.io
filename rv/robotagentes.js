@@ -97,7 +97,7 @@ kirby.prototype.act=function(environment){
 
 kirby.prototype.operations = {};
 
-BB8.prototype.operations.Derecho = function(robot,step){
+kirby.prototype.operations.Derecho = function(robot,step){
  if(step==undefined)
   step=0.1;
  robot.position.x+=step*Math.cos(robot.rotation.z);
