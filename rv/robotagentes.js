@@ -17,6 +17,10 @@ function kirby(x=0, y=0){
   this.pieI = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
   this.pieD = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
   
+ this.sensor=new Sensor();
+ //this.sensor2=new Sensor();
+ this.actuator=new Array();
+  
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
   this.pieD.position.y=-3;
