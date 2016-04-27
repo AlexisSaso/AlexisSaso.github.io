@@ -106,10 +106,10 @@ kirby.prototype.operations.Derecho = function(robot,step){
  robot.scale.x=0.5;
  robot.scale.y=0.5;
  robot.scale.z=0.5;
- if (Math.abs(robot.pieD.rotation.z) > Math.PI/3)
+ if (Math.abs(robot.pieD.rotation.z) > Math.abs(Math.PI/3))
   steppie = -steppie;
 
-if (Math.abs(robot.brazoD.rotation.x) > 2 || Math.abs(robot.brazoD.rotation.x) < 1)
+if (Math.abs(robot.brazoD.rotation.x) > 2 || robot.brazoD.rotation.x) < 1)
   stepbrazo = -stepbrazo;
 
  robot.position.x+=step*Math.cos(robot.rotation.z);
