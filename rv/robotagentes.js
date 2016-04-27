@@ -106,7 +106,7 @@ kirby.prototype.operations.Derecho = function(robot,step){
  robot.scale.x=0.5;
  robot.scale.y=0.5;
  robot.scale.z=0.5;
- if (Math.abs(robot.pieD.rotation.z) > .5 )
+ if (Math.abs(robot.pieD.rotation.z) > 5 )
   steppie = -steppie;
 
 if (Math.abs(robot.brazoD.rotation.x) > 2 || Math.abs(robot.brazoD.rotation.x) < 1)
@@ -168,7 +168,7 @@ function setup(){
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
  entorno=new Environment();
  entorno.setMap(mapa);
-  steppie=0.01;
+  steppie=0.1;
   stepbrazo = 0.017;
  luzPuntual = new THREE.PointLight(0xffffff);
  luzPuntual.position.x=0;  
