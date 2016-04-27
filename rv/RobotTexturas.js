@@ -1,15 +1,15 @@
 function Completo(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
-  var cara = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/cara kirby grande.jpg');
+  var cara = THREE.ImageUtils.loadTexture('http://Ignacio121990.github.io/rv/robotkirby.jpg');
   var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color_kirby.jpg');
   var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Zapato.jpg');  
   
-  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshBasicMaterial({map:cara}));
-  this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
-  this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
-  this.pieI = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
-  this.pieD = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
+  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshPhongMaterial({map:cara}));
+  this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
+  this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
+  this.pieI = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
+  this.pieD = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
   
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
