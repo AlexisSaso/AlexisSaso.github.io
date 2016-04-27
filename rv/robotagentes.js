@@ -102,9 +102,6 @@ kirby.prototype.operations = {};
 
 kirby.prototype.operations.Derecho = function(robot,step){
  if(step==undefined)
-  step=0.1;
-  steppie=0.01;
-  stepbrazo = 0.017;
  robot.scale.x=0.5;
  robot.scale.y=0.5;
  robot.scale.z=0.5;
@@ -170,6 +167,9 @@ function setup(){
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
  entorno=new Environment();
  entorno.setMap(mapa);
+  step=0.1;
+  steppie=0.01;
+  stepbrazo = 0.017;
  luzPuntual = new THREE.PointLight(0xffffff);
  luzPuntual.position.x=0;  
  luzPuntual.position.y=10;
