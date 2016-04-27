@@ -109,7 +109,7 @@ kirby.prototype.operations.Derecho = function(robot,step){
  robot.scale.y=0.5;
  robot.scale.z=0.5;
  if (Math.abs(robot.pieD.rotation.z) > .3 )
-  stepie = -stepie;
+  steppie = -steppie;
 
 if (Math.abs(robot.brazoD.rotation.x) > 2 || Math.abs(robot.brazoD.rotation.x) < 1)
   stepbrazo = -stepbrazo;
