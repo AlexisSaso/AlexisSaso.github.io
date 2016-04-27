@@ -168,7 +168,7 @@ function setup(){
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
  entorno=new Environment();
  entorno.setMap(mapa);
-  steppie=0.1;
+  steppie=0.01;
   stepbrazo = 0.017;
  luzPuntual = new THREE.PointLight(0xffffff);
  luzPuntual.position.x=0;  
