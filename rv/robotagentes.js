@@ -103,6 +103,9 @@ kirby.prototype.operations = {};
 kirby.prototype.operations.Derecho = function(robot,step){
  if(step==undefined)
   step=0.1;
+ robot.scale.x=0.5;
+ robot.scale.y=0.5;
+ robot.scale.z=0.5;
  robot.position.x+=step*Math.cos(robot.rotation.z);
  robot.position.y+=step*Math.sin(robot.rotation.z);
 };
