@@ -20,21 +20,6 @@ function kirby(x=0, y=0){
  this.sensor=new Sensor();
  //this.sensor2=new Sensor();
  this.actuator=new Array();
-  this.cuerpo.scale.x=0.5;
-  this.cuerpo.scale.y=0.5;
-  this.cuerpo.scale.z=0.5;
-    this.brazoD.scale.x=0.5;
-  this.brazoD.scale.y=0.5;
-  this.brazoD.scale.z=0.5;
-    this.brazoI.scale.x=0.5;
-  this.brazoI.scale.y=0.5;
-  this.brazoI.scale.z=0.5;
-    this.pieD.scale.x=0.5;
-  this.pieD.scale.y=0.5;
-  this.pieD.scale.z=0.5;
-    this.pieI.scale.x=0.5;
-  this.pieI.scale.y=0.5;
-  this.pieI.scale.z=0.5;
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
   this.pieD.position.y=-3;
@@ -75,7 +60,7 @@ Environment.prototype.setMap=function(map){
 }	
 
 kirby.prototype.sense=function(environment){
- this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+ //this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
  //this.sensor2.set(this.position, new THREE.Vector3(Math.sin(this.rotation.z),Math.cos(this.rotation.z),0));
  var obstaculo = this.sensor.intersectObjects(environment.children,true);
  //var obstaculo2 = this.sensor2.intersectObjects(environment.children,true);
