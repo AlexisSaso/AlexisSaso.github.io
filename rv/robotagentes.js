@@ -102,7 +102,7 @@ kirby.prototype.operations = {};
 
 kirby.prototype.operations.Derecho = function(robot,step){
  if(step==undefined)
- step=0.1;
+ step=0.01;
  robot.scale.x=0.5;
  robot.scale.y=0.5;
  robot.scale.z=0.5;
