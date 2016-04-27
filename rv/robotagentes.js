@@ -60,7 +60,7 @@ Environment.prototype.setMap=function(map){
 }	
 
 kirby.prototype.sense=function(environment){
- //this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+ this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
  //this.sensor2.set(this.position, new THREE.Vector3(Math.sin(this.rotation.z),Math.cos(this.rotation.z),0));
  var obstaculo = this.sensor.intersectObjects(environment.children,true);
  //var obstaculo2 = this.sensor2.intersectObjects(environment.children,true);
@@ -105,7 +105,6 @@ kirby.prototype.operations.Derecho = function(robot,step){
   step=0.1;
  robot.position.x+=step*Math.cos(robot.rotation.z);
  robot.position.y+=step*Math.sin(robot.rotation.z);
- robot.cuerpo.rotation.z-=0.5;
 };
 
 kirby.prototype.operations.RotarDerecha = function(robot,angulo){
