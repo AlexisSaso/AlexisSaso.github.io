@@ -108,6 +108,10 @@ kirby.prototype.operations.Derecho = function(robot,step){
  robot.scale.z=0.5;
  robot.position.x+=step*Math.cos(robot.rotation.z);
  robot.position.y+=step*Math.sin(robot.rotation.z);
+ robot.brazoD.rotation.x += stepbrazo;
+ robot.brazoI.rotation.x += stepbrazo;
+ robot.pieD.rotation.z += step;
+ robot.pieI.rotation.z -= step;
 };
 
 kirby.prototype.operations.RotarDerecha = function(robot,angulo){
