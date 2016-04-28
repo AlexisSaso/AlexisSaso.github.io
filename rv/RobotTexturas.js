@@ -1,7 +1,7 @@
 function Completo(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
-  var cara = THREE.ImageUtils.loadTexture('http://Ignacio121990.github.io/robotkirby.jpg');
+  var cara = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/robotkirby.jpg');
   var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color_kirby.jpg');
   var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Zapato.jpg');  
   
