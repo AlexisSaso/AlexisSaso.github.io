@@ -44,7 +44,7 @@ function setup(){
   
   escena = new THREE.Scene();
   escena.add(kirby);
-  //escena.add(luzPuntual);
+  escena.add(luzPuntual);
     
  camara = new THREE.PerspectiveCamera();
   camara.position.z = 30;
