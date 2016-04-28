@@ -3,7 +3,7 @@ function Completo(){
   THREE.ImageUtils.crossOrigin = '';
   var cara = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/robotkirby.jpg');
   var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color_kirby.jpg');
-  var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Zapato.jpg');  
+  var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/llanta.jpg');  
   
   this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3),new THREE.MeshPhongMaterial({map:cara}));
   this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
