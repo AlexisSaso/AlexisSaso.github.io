@@ -37,14 +37,14 @@ function setup(){
   step  =0.01;
   stepbrazo = 0.017;
   
-  luzPuntual = new THREE.PointLight(0xffffff);
-  luzPuntual.position.x=30;
-  luzPuntual.position.y=30;
-  luzPuntual.position.z=30;
+  //luzPuntual = new THREE.PointLight(0xffffff);
+  //luzPuntual.position.x=30;
+  //luzPuntual.position.y=30;
+  //luzPuntual.position.z=30;
   
   escena = new THREE.Scene();
   escena.add(kirby);
-  escena.add(luzPuntual);
+  //escena.add(luzPuntual);
     
  camara = new THREE.PerspectiveCamera();
   camara.position.z = 30;
