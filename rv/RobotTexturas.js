@@ -13,14 +13,16 @@ function Completo(){
   
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
-  this.pieD.position.y=-3;
+  this.pieD.position.y=-1;
   this.pieD.position.z=1;
-  this.pieI.position.y=-3;
+  this.pieI.position.y=-1;
   this.pieI.position.z=-1;
   this.pieD.position.x=1;
   this.pieI.position.x=1;
   this.brazoD.rotation.x=1.5;
   this.brazoI.rotation.x=-1.5;
+   this.pieD.rotation.x=Math.PI/2;
+  this.pieI.rotation.x=Math.PI/2;
   
   this.add(this.pieI)
   this.add(this.pieD)
