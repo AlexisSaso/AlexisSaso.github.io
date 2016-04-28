@@ -64,8 +64,8 @@ if (Math.abs(kirby.brazoD.rotation.x) > 2 || Math.abs(kirby.brazoD.rotation.x) <
 
 kirby.brazoD.rotation.x += stepbrazo;
 kirby.brazoI.rotation.x += stepbrazo;
-kirby.pieD.rotation.z += step;
-kirby.pieI.rotation.z -= step;
+//kirby.pieD.rotation.z += step;
+//kirby.pieI.rotation.z -= step;
 
 //kirby.rotation.x += 0.01;
 kirby.rotation.y += 0.01;
