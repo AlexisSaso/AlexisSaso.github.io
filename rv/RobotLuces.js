@@ -175,10 +175,10 @@ function setup(){
  piso.position.x=-1.5;
  piso.position.y=0.5;
  luzPuntual = new THREE.PointLight(0xffffff);
- luzPuntual.position.y=30;
- luzPuntual.position.z=50;
+ luzPuntual.position.y=15;
+ luzPuntual.position.z=5;
  camara=new THREE.PerspectiveCamera();
- camara.position.z=30;
+ camara.position.z=40;
  renderer = new THREE.WebGLRenderer();
  renderer.setSize(window.innerHeight*0.95, window.innerHeight*0.95);
  document.body.appendChild(renderer.domElement);
