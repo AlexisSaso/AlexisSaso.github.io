@@ -118,6 +118,8 @@ if (Math.abs(robot.brazoD.rotation.x) > 2 || Math.abs(robot.brazoD.rotation.x) <
  robot.brazoI.rotation.x += stepbrazo;
  robot.pieD.rotation.z += steppie;
  robot.pieI.rotation.z -= steppie;
+ luzPuntual.position.y=step;
+ luzPuntual.position.z=step;
 };
 
 kirby.prototype.operations.RotarDerecha = function(robot,angulo){
@@ -125,6 +127,7 @@ kirby.prototype.operations.RotarDerecha = function(robot,angulo){
   angulo=-Math.PI/2;
  }
  robot.rotation.z+=angulo;
+ luzPuntual.rotation.z=angulo;
 };
 
 kirby.prototype.operations.RotarIzquierda = function(robot,angulo){
@@ -132,6 +135,7 @@ kirby.prototype.operations.RotarIzquierda = function(robot,angulo){
   angulo=Math.PI/2;
  }
  robot.rotation.z+=angulo;
+ luzPuntual.rotation.z=angulo;
 };
  
 function setup(){
@@ -175,8 +179,6 @@ function setup(){
  piso.position.x=-1.5;
  piso.position.y=0.5;
  luzPuntual = new THREE.PointLight(0xffffff);
- luzPuntual.position.y=15;
- luzPuntual.position.z=15;
  camara=new THREE.PerspectiveCamera();
  camara.position.z=40;
  renderer = new THREE.WebGLRenderer();
