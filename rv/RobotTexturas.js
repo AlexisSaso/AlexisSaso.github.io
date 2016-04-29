@@ -8,14 +8,14 @@ function Completo(){
   this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3,100,100),new THREE.MeshPhongMaterial({map:cara}));
   this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
   this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
-  this.pieI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,0.5),new THREE.MeshPhongMaterial({map:pies}));
+  this.pieI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
   this.pieD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
   
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
-  this.pieD.position.y=-3;
+  this.pieD.position.y=-2;
   this.pieD.position.z=1;
-  this.pieI.position.y=-3;
+  this.pieI.position.y=-2;
   this.pieI.position.z=-1;
   this.pieD.position.x=1;
   this.pieI.position.x=1;
@@ -67,8 +67,8 @@ kirby.brazoI.rotation.x += stepbrazo;
 kirby.pieD.rotation.z += step;
 kirby.pieI.rotation.z -= step;
 
-kirby.rotation.x += 0.01;
-//kirby.rotation.y += 0.01;
+//kirby.rotation.x += 0.01;
+kirby.rotation.y += 0.01;
 }
 
 var escena, camara, renderer;
