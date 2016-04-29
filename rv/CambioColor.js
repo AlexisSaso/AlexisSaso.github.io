@@ -18,7 +18,6 @@ function kirby(x=0, y=0){
   this.pieD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
  
    this.sensor=new Sensor();
- //this.sensor2=new Sensor();
  this.actuator=new Array();
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
@@ -61,27 +60,15 @@ Environment.prototype.setMap=function(map){
 
 kirby.prototype.sense=function(environment){
  this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
- //this.sensor2.set(this.position, new THREE.Vector3(Math.sin(this.rotation.z),Math.cos(this.rotation.z),0));
  var obstaculo = this.sensor.intersectObjects(environment.children,true);
- //var obstaculo2 = this.sensor2.intersectObjects(environment.children,true);
  if ((obstaculo.length>0&&(obstaculo[0].distance<=1.5)))
   this.sensor.colision=true;
  else
   this.sensor.colision=false;
- /*if((obstaculo2.length>0&&(obstaculo2[0].distance<=1)))
-  this.sensor2.colision=true;
- else
-  this.sensor2.colision=false;*/
 }
 
 kirby.prototype.plan = function(environment){
  this.actuator.commands=[];
- /*if(this.sensor.colision==false && this.sensor2.colision==true)
-  this.actuator.commands.push('Derecho');
- else if(this.sensor.colision==true && this.sensor2.colision==true)
-   this.actuator.commands.push('RotarDerecha');
- else
-   this.actuator.commands.push('RotarIzquierda');*/
   if(this.sensor.colision==true)
    this.actuator.commands.push('RotarIzquierda');
   else
@@ -175,8 +162,9 @@ function setup(){
  piso.position.x=-1.5;
  piso.position.y=0.5;
  luzPuntual = new THREE.PointLight(0xffffff);
- luzPuntual.position.x+=step;
- luzPuntual.position.y+=step;
+ luzPuntual.position.x+=20;
+ luzPuntual.position.y+=20;
+ luzPuntual.position.z+=20;
  camara=new THREE.PerspectiveCamera();
  camara.position.z=40;
  renderer = new THREE.WebGLRenderer();
