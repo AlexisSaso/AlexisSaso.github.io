@@ -21,8 +21,6 @@ function Completo(){
   this.pieI.position.x=1;
   this.brazoD.rotation.x=1.5;
   this.brazoI.rotation.x=-1.5;
-   this.pieD.rotation.x=Math.PI/2;
-  this.pieI.rotation.x=Math.PI/2;
   
   this.add(this.pieI)
   this.add(this.pieD)
@@ -66,8 +64,8 @@ if (Math.abs(kirby.brazoD.rotation.x) > 2 || Math.abs(kirby.brazoD.rotation.x) <
 
 kirby.brazoD.rotation.x += stepbrazo;
 kirby.brazoI.rotation.x += stepbrazo;
-//kirby.pieD.rotation.z += step;
-//kirby.pieI.rotation.z -= step;
+kirby.pieD.rotation.z += step;
+kirby.pieI.rotation.z -= step;
 
 kirby.rotation.x += 0.01;
 kirby.rotation.y += 0.01;
