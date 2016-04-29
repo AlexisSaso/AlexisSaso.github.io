@@ -164,7 +164,7 @@ function setup(){
  luzPuntual = new THREE.PointLight(0xffffff);
  luzPuntual.position.x+=20;
  luzPuntual.position.y+=20;
- luzPuntual.position.z+=20;
+ luzPuntual.position.z+=40;
  camara=new THREE.PerspectiveCamera();
  camara.position.z=40;
  renderer = new THREE.WebGLRenderer();
