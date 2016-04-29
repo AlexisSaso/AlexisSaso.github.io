@@ -64,7 +64,7 @@ kirby.prototype.sense=function(environment){
  //this.sensor2.set(this.position, new THREE.Vector3(Math.sin(this.rotation.z),Math.cos(this.rotation.z),0));
  var obstaculo = this.sensor.intersectObjects(environment.children,true);
  //var obstaculo2 = this.sensor2.intersectObjects(environment.children,true);
- if ((obstaculo.length>0&&(obstaculo[0].distance<=1.5)))
+ if ((obstaculo.length>0&&(obstaculo[0].distance<=3)))
   this.sensor.colision=true;
  else
   this.sensor.colision=false;
