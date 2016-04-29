@@ -54,7 +54,6 @@ Environment.prototype.setMap=function(map){
     this.add(new Wall(1, j-offset,-(i-offset)));
    else if(map[i][j]==="r")
     this.add(new kirby(j-offset,-(i-offset)));
-    this.add(new THREE.PointLight());
   }
  }
 }	
