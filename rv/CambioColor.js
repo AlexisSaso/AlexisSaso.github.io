@@ -17,6 +17,12 @@ function kirby(x=0, y=0){
   this.pieI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
   this.pieD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
  
+  this.luzr=new THREE.SpotLight(0xffffff,4,1000,0.3);
+ this.luzr.target.updateMatrixWorld();
+ this.luzr.target.position.set(10,0,0);
+ this.add(this.luzr);
+ this.add(this.luzr.target);
+ 
    this.sensor=new Sensor();
  this.actuator=new Array();
   this.brazoI.position.z=2.3;
@@ -30,6 +36,12 @@ function kirby(x=0, y=0){
   this.brazoD.rotation.x=1.5;
   this.brazoI.rotation.x=-1.5;
   
+  this.cuerpo.castShadow=true;
+   this.brazoD.castShadow=true;
+    this.brazoI.castShadow=true;
+     this.pieD.castShadow=true;
+      this.pieI.castShadow=true;
+      
   this.add(this.pieI)
   this.add(this.pieD)
   this.add(this.brazoI)
@@ -127,18 +139,18 @@ function setup(){
   mapa[1] = "x                          x";
   mapa[2] = "x                          x";
   mapa[3] = "x                          x";
-  mapa[4] = "x    r                     x";
+  mapa[4] = "x                          x";
   mapa[5] = "x                          x";
-  mapa[6] = "xxxxxxxxxxxxxxxx    xxxxxxxx";
+  mapa[6] = "x                   xxxxxx x";
   mapa[7] = "x                          x";
   mapa[8] = "x                          x";
-  mapa[9] = "x                          x";
+  mapa[9] = "xxxxx                      x";
  mapa[10] = "x                          x";
  mapa[11] = "x                          x";
  mapa[12] = "x                          x";
  mapa[13] = "x                          x";
  mapa[14] = "x                          x";
- mapa[15] = "x                          x";
+ mapa[15] = "x                      xxxxx";
  mapa[16] = "x                          x";
  mapa[17] = "x                          x";
  mapa[18] = "x                          x";
@@ -147,10 +159,10 @@ function setup(){
  mapa[21] = "x                          x";
  mapa[22] = "x                          x";
  mapa[23] = "x                          x";
- mapa[24] = "xxxxxxxxxxxxx           xxxx";
+ mapa[24] = "xxxxxxxxxxxxx              x";
  mapa[25] = "x                          x";
  mapa[26] = "x                          x";
- mapa[27] = "x      r                   x";
+ mapa[27] = "x                          x";
  mapa[28] = "x                          x";
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
  entorno=new Environment();
