@@ -64,7 +64,7 @@ kirby.prototype.sense=function(environment){
  //this.sensor2.set(this.position, new THREE.Vector3(Math.sin(this.rotation.z),Math.cos(this.rotation.z),0));
  var obstaculo = this.sensor.intersectObjects(environment.children,true);
  //var obstaculo2 = this.sensor2.intersectObjects(environment.children,true);
- if ((obstaculo.length>0&&(obstaculo[0].distance<=3)))
+ if ((obstaculo.length>0&&(obstaculo[0].distance<=1.5)))
   this.sensor.colision=true;
  else
   this.sensor.colision=false;
@@ -137,10 +137,10 @@ kirby.prototype.operations.RotarIzquierda = function(robot,angulo){
 function setup(){
  var mapa = new Array();
   mapa[0] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-  mapa[1] = "x   r                      x";
+  mapa[1] = "x                          x";
   mapa[2] = "x                          x";
   mapa[3] = "x                          x";
-  mapa[4] = "x                          x";
+  mapa[4] = "x    r                     x";
   mapa[5] = "x                          x";
   mapa[6] = "xxxxxxxxxxxxxxxx    xxxxxxxx";
   mapa[7] = "x                          x";
@@ -161,9 +161,9 @@ function setup(){
  mapa[22] = "x                          x";
  mapa[23] = "x                          x";
  mapa[24] = "xxxxxxxxxxxxx           xxxx";
- mapa[25] = "x     r                    x";
+ mapa[25] = "x                          x";
  mapa[26] = "x                          x";
- mapa[27] = "x                          x";
+ mapa[27] = "x      r                   x";
  mapa[28] = "x                          x";
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
  entorno=new Environment();
