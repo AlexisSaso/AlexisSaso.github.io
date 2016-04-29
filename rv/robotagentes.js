@@ -7,24 +7,24 @@ Sensor.prototype=new THREE.Raycaster();
 function kirby(x=0, y=0){
   Agent.call(this,x,y);
   THREE.ImageUtils.crossOrigin = '';
-  var cara = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/cara kirby grande.jpg');
-  var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color_kirby.jpg');
+  var cara = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Cara_Kirby.jpg');
+  var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color.jpg');
   var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Zapato.jpg');  
   
-  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3,100,100),new THREE.MeshBasicMaterial({map:cara}));
-  this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
-  this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshBasicMaterial({map:brazos}));
-  this.pieI = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
-  this.pieD = new THREE.Mesh(new THREE.BoxGeometry(2,1,0.5),new THREE.MeshBasicMaterial({map:pies}));
-  
- this.sensor=new Sensor();
+  this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3,100,100),new THREE.MeshPhongMaterial({map:cara}));
+  this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
+  this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
+  this.pieI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
+  this.pieD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
+ 
+   this.sensor=new Sensor();
  //this.sensor2=new Sensor();
  this.actuator=new Array();
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
-  this.pieD.position.y=-3;
+  this.pieD.position.y=-2;
   this.pieD.position.z=1;
-  this.pieI.position.y=-3;
+  this.pieI.position.y=-2;
   this.pieI.position.z=-1;
   this.pieD.position.x=1;
   this.pieI.position.x=1;
