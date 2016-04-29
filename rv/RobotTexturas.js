@@ -68,7 +68,7 @@ kirby.pieD.rotation.z += step;
 kirby.pieI.rotation.z -= step;
 
 kirby.rotation.x += 0.01;
-kirby.rotation.y += 0.01;
+//kirby.rotation.y += 0.01;
 }
 
 var escena, camara, renderer;
