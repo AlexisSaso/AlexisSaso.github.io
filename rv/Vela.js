@@ -62,7 +62,7 @@ step=0.01;
 }
 function loop()
 {
-  if (malla.position.x = Math.abs(2))
+  if (malla.position.x = Math.abs(5))
       step=-step;
   requestAnimationFrame(loop);
   malla.position.x+=step;
