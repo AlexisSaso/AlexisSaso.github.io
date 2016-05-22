@@ -62,7 +62,7 @@ luz.castShadow=true;
 function loop()
 {
   requestAnimationFrame(loop);
-  malla.rotation.z+=0.01;
+  malla.rotation.x+=0.01;
   renderer.render(escena,camara);
 }
 
