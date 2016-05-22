@@ -57,12 +57,15 @@ pared3.receiveShadow=true;
 pared4.receiveShadow=true;
 floor.receiveShadow=true;
 luz.castShadow=true;
+step=0.01;
 
 }
 function loop()
 {
+  if (malla.position.x = Math.abs(2))
+      step=-step;
   requestAnimationFrame(loop);
-  malla.rotation.y+=0.1;
+  malla.position.x+=step;
   renderer.render(escena,camara);
 }
 
