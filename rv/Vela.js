@@ -3,11 +3,11 @@ THREE.ImageUtils.crossOrigin = '';
 var textura = new THREE.TextureLoader().load('http://AlexisSaso.github.io/rv/Jade_Dragon.jpg');
 var forma=new THREE.CylinderGeometry(2.5,2.5,10,50);
 var material=new THREE.MeshPhongMaterial({map:textura});
-var pared1 = new THREE.Mesh(new THREE.BoxGeometry(1,20,10), new THREE.MeshPhongMaterial({color:'#ffffff'}));
-var pared2 = new THREE.Mesh(new THREE.BoxGeometry(1,20,10), new THREE.MeshPhongMaterial({color:'#ffffff'}));
-var pared3 = new THREE.Mesh(new THREE.BoxGeometry(21,1,10), new THREE.MeshPhongMaterial({color:'#ffffff'}));
-var pared4 = new THREE.Mesh(new THREE.BoxGeometry(21,1,10), new THREE.MeshPhongMaterial({color:'#ffffff'}));
-var floor=new THREE.Mesh(new THREE.BoxGeometry(20,20,0.1), new THREE.MeshLambertMaterial({color:0xffffff}));
+var pared1 = new THREE.Mesh(new THREE.BoxGeometry(1,20,10), new THREE.MeshPhongMaterial({color:'#3B15B7'}));
+var pared2 = new THREE.Mesh(new THREE.BoxGeometry(1,20,10), new THREE.MeshPhongMaterial({color:'#3B15B7'}));
+var pared3 = new THREE.Mesh(new THREE.BoxGeometry(21,1,10), new THREE.MeshPhongMaterial({color:'#3B15B7'}));
+var pared4 = new THREE.Mesh(new THREE.BoxGeometry(21,1,10), new THREE.MeshPhongMaterial({color:'#3B15B7'}));
+var floor=new THREE.Mesh(new THREE.BoxGeometry(20,20,0.1), new THREE.MeshLambertMaterial({color:0x3B15B7}));
 floor.position.z=-5;
 floor.position.x=0;
 floor.position.y=0;
@@ -16,8 +16,8 @@ pared1.position.x=10;
 pared2.position.x=-10;
 pared3.position.y=10;
 pared4.position.y=-10;
-luz=new THREE.SpotLight(0xffffff);
-luzPuntual=new THREE.PointLight(0xffffff);
+luz=new THREE.SpotLight(0xB71538);
+luzPuntual=new THREE.PointLight(0xB71538);
 luzPuntual.position.x=5;
 luzPuntual.position.y=5;
 luzPuntual.position.z=20;
@@ -57,15 +57,12 @@ pared3.receiveShadow=true;
 pared4.receiveShadow=true;
 floor.receiveShadow=true;
 luz.castShadow=true;
-step=0.01;
 
 }
 function loop()
 {
-  if (malla.position.x = Math.abs(5))
-      step=-step;
   requestAnimationFrame(loop);
-  malla.position.x+=step;
+  malla.rotation.z+=0.01;
   renderer.render(escena,camara);
 }
 
