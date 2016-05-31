@@ -31,6 +31,28 @@ THREE.Object3D.call(this);
 
 Completo.prototype = new THREE.Object3D();
 
+kirby.prototype=new Agent();
+
+function Wall(size,x=0,y=0){
+ THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,size), new THREE.MeshNormalMaterial()); 
+ this.size=size;
+ this.position.x=x;
+ this.position.y=y;
+}
+Wall.prototype=new THREE.Mesh();
+
+Environment.prototype.setMap=function(map){
+ var offset=Math.floor(map.length/2);
+ for(var i=0;i<map.length;i++){
+  for(var j=0;j<map.length;j++){
+   if(map[i][j]==="x")
+    this.add(new Wall(1, j-offset,-(i-offset)));
+   else if(map[i][j]==="r")
+    this.add(new kirby(j-offset,-(i-offset)));
+  }
+ }
+}	
+
 function setup(){
  kirby = new Completo();
   step  =0.01;
@@ -38,38 +60,43 @@ function setup(){
   
 //Escenario
 THREE.ImageUtils.crossOrigin='';
-var textura = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
-
-//la habitacion  
-cubo1=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({map:textura}));
-cubo2=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({map:textura}));
-cubo3=new THREE.Mesh(new THREE.BoxGeometry(80,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
-cubo4=new THREE.Mesh(new THREE.BoxGeometry(80,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
-
-
-//los obstaculos
-pared1= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
-pared2= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
-pared3= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
-pared4= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
-pared5= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
-
-
-cubo1.position.x=37;
-cubo2.position.x=-37;
-cubo3.position.y=-37;
-cubo4.position.y=37;
-
-pared1.position.x=-15;
-pared1.position.y=-10;
-pared2.position.x=-15;
-pared2.position.y=10;
-pared3.position.x=0;
-pared3.position.y=0;
-pared4.position.x=15;
-pared4.position.y=10;
-pared5.position.x=15;
-pared5.position.y=-20;
+var mapa = new Array();
+   mapa[0] = "xxxxxxxxxxxxxxxxxxxxxxx   xxx";
+   mapa[1] = "xxxx                        x";
+   mapa[2] = "xxxx                        x";
+   mapa[3] = "x                           x";
+   mapa[4] = "x                           x";
+   mapa[5] = "x                           x";
+   mapa[6] = "x                        xxxx";
+   mapa[7] = "x                        xxxx";
+   mapa[8] = "x                        xxxx";
+   mapa[9] = "x                           x";
+ mapa[10] = "x                           x";
+ mapa[11] = "x                           x";
+ mapa[12] = "x          xxxxx            x";
+ mapa[13] = "x          xxxxx            x";
+ mapa[14] = "x          xxxxx            x";
+ mapa[15] = "x                           x";
+ mapa[16] = "x                           x";
+ mapa[17] = "x                           x";
+ mapa[18] = "xxxx                        x";
+ mapa[19] = "xxxx                        x";
+ mapa[20] = "xxxx                        x";
+ mapa[21] = "xxxx                        x";
+ mapa[22] = "x                           x";
+ mapa[23] = "x                           x";
+ mapa[24] = "x                        xxxx";
+ mapa[25] = "x                        xxxx";
+ mapa[26] = "x                        xxxx";
+ mapa[27] = "x r                      xxxx";
+ mapa[28] = "x                        xxxx";
+ mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+ escena=new Environment();
+ escena.setMap(mapa);
+ var floor=new THREE.Mesh(new THREE.BoxGeometry(28,30,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
+ floor.position.z=-0.5;
+ floor.position.x=-1.5;
+ floor.position.y=0.5;
 
 camara=new THREE.PerspectiveCamera();
 camara.position.z=80;
@@ -93,20 +120,10 @@ luzPuntual = new THREE.PointLight(0xffffff);
   luzPuntual.position.y=30;
   luzPuntual.position.z=30;
 
-escena=new THREE.Scene();
-escena.add(cubo1);
-escena.add(cubo2);
-escena.add(cubo3);
-escena.add(cubo4);
-escena.add(pared1);
-escena.add(pared2);
-escena.add(pared3);
-escena.add(pared4);
-escena.add(pared5);
 escena.add(kirby);
 escena.add(camara);
 escena.add(luzconica)
- escena.add(luzPuntual);
+escena.add(luzPuntual);
 kirby.position.x=-20;
 kirby.position.y=-20;
 renderer=new THREE.WebGLRenderer();
