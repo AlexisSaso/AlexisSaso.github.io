@@ -1,16 +1,32 @@
-function Completo(){
-THREE.Object3D.call(this);
+function kirby(x=0, y=0){
+  Agent.call(this,x,y);
   THREE.ImageUtils.crossOrigin = '';
-  var cara = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Cara_Kirby.jpg');
-  var brazos = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Color.jpg');
-  var pies = THREE.ImageUtils.loadTexture('http://AlexisSaso.github.io/rv/Zapato.jpg');  
+  var cara = THREE.ImageUtils.loadTexture('http://Ignacio121990.github.io/12899665_10153684992446843_1267488120_n.jpg');
+  var brazos = THREE.ImageUtils.loadTexture('http://Ignacio121990.github.io/12899889_10153685013876843_569751267_n.jpg');
+  var pies = THREE.ImageUtils.loadTexture('http://Ignacio121990.github.io/12919388_10153685013881843_2062601905_o.jpg'); 
   
   this.cuerpo = new THREE.Mesh(new THREE.SphereGeometry(3,100,100),new THREE.MeshPhongMaterial({map:cara}));
   this.brazoI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
   this.brazoD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,4),new THREE.MeshPhongMaterial({map:brazos}));
   this.pieI = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
   this.pieD = new THREE.Mesh(new THREE.CylinderGeometry(0.5,1,0.5),new THREE.MeshPhongMaterial({map:pies}));
-  
+ 
+ 
+   this.add(this.pieI)
+  this.add(this.pieD)
+  this.add(this.brazoI)
+  this.add(this.brazoD)
+  this.add(this.cuerpo)
+ 
+   this.luzr=new THREE.SpotLight(0xffffff,4,2000,.01);
+ this.luzr.target.updateMatrixWorld();
+ this.luzr.target.position.set(0,10,0);
+ this.add(this.luzr);
+ this.add(this.luzr.target);
+ 
+   this.sensor=new Sensor();
+
+ this.actuator=new Array();
   this.brazoI.position.z=2.3;
   this.brazoD.position.z=-2.3;
   this.pieD.position.y=-2;
@@ -21,24 +37,37 @@ THREE.Object3D.call(this);
   this.pieI.position.x=1;
   this.brazoD.rotation.x=1.5;
   this.brazoI.rotation.x=-1.5;
+  this.cuerpo.castShadow=true;
   
-  this.add(this.pieI)
-  this.add(this.pieD)
-  this.add(this.brazoI)
-  this.add(this.brazoD)
-  this.add(this.cuerpo)
+
+}
+  
+ kirby.prototype=new Agent();
+
+function Wall(size,x=0,y=0){
+ THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,size), new THREE.MeshNormalMaterial()); 
+ this.size=size;
+ this.position.x=x;
+ this.position.y=y;
+}
+Wall.prototype=new THREE.Mesh();
+
+Environment.prototype.setMap=function(map){
+ var offset=Math.floor(map.length/2);
+ for(var i=0;i<map.length;i++){
+  for(var j=0;j<map.length;j++){
+   if(map[i][j]==="x")
+    this.add(new Wall(1, j-offset,-(i-offset)));
+   else if(map[i][j]==="r")
+    this.add(new kirby(j-offset,-(i-offset)));
+  }
+ }
 }
 
-Completo.prototype = new THREE.Object3D();
+kirby.prototype.operations = {};
 
 function setup(){
- kirby = new Completo();
- kirby.prototype=new Agent();
-  step  =0.01;
-  stepbrazo = 0.017;
-  
 //Escenario
-THREE.ImageUtils.crossOrigin='';
 var mapa = new Array();
    mapa[0] = "xxxxxxxxxxxxxxxxxxxxxxx   xxx";
    mapa[1] = "xxxx                        x";
@@ -70,7 +99,7 @@ var mapa = new Array();
  mapa[27] = "x r                      xxxx";
  mapa[28] = "x                        xxxx";
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
- escena=new Environment();
+escena=new Environment();
  escena.setMap(mapa);
  var floor=new THREE.Mesh(new THREE.BoxGeometry(28,30,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
  floor.position.z=-0.5;
@@ -99,7 +128,7 @@ luzPuntual = new THREE.PointLight(0xffffff);
   luzPuntual.position.y=30;
   luzPuntual.position.z=30;
 
-escena.add(kirby);
+escena.add(floor);
 escena.add(camara);
 escena.add(luzconica)
 escena.add(luzPuntual);
@@ -134,36 +163,6 @@ b4=0;
 b5=0;
 ajuste=0;
 }
-
-kirby.prototype.act=function(environment){
- var command=this.actuator.commands.pop();
- if(command==undefined)
-  console.log('Undefined command');
- else if(command in this.operations)
-  this.operations[command](this);
- else
-  console.log('Unknown command'); 
-}
-
-function Wall(size,x=0,y=0){
- THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,size), new THREE.MeshNormalMaterial()); 
- this.size=size;
- this.position.x=x;
- this.position.y=y;
-}
-Wall.prototype=new THREE.Mesh();
-
-Environment.prototype.setMap=function(map){
- var offset=Math.floor(map.length/2);
- for(var i=0;i<map.length;i++){
-  for(var j=0;j<map.length;j++){
-   if(map[i][j]==="x")
-    this.add(new Wall(1, j-offset,-(i-offset)));
-   else if(map[i][j]==="r")
-    this.add(new kirby(j-offset,-(i-offset)));
-  }
- }
-}	
 
 function loop(){
 //todos los posibles obstaculos
