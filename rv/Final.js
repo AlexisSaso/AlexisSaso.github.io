@@ -107,7 +107,8 @@ escena.add(kirby);
 escena.add(camara);
 escena.add(luzconica)
  escena.add(luzPuntual);
-
+kirby.position.x=-20;
+kirby.position.y=-20;
 renderer=new THREE.WebGLRenderer();
 renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderer.domElement);
