@@ -31,8 +31,6 @@ THREE.Object3D.call(this);
 
 Completo.prototype = new THREE.Object3D();
 
-kirby.prototype=new Agent();
-
 function Wall(size,x=0,y=0){
  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,size), new THREE.MeshNormalMaterial()); 
  this.size=size;
@@ -55,6 +53,7 @@ Environment.prototype.setMap=function(map){
 
 function setup(){
  kirby = new Completo();
+ kirby.prototype=new Agent();
   step  =0.01;
   stepbrazo = 0.017;
   
