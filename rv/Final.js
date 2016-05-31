@@ -116,8 +116,8 @@ document.body.appendChild(renderer.domElement);
 //seleccionar objetivo
 //OBJETIVOX=-20;
 //OBJETIVOY=20;
-OBJETIVOX=10;
-OBJETIVOY=20;
+OBJETIVOX=30;
+OBJETIVOY=-30;
 
 stepy=0.2;
 stepx=0.2;
