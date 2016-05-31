@@ -4,6 +4,11 @@ function Agent(x=0, y=0){
  this.position.y=y;
 }
 
+function Environment() {
+ THREE.Scene.call(this);
+}
+
+
 function kirby(x=0, y=0){
   Agent.call(this,x,y);
   THREE.ImageUtils.crossOrigin = '';
