@@ -49,6 +49,18 @@ function Wall(size,x=0,y=0){
 }
 Wall.prototype=new THREE.Mesh();
 
+Environment.prototype.setMap=function(map){
+ var offset=Math.floor(map.length/2);
+ for(var i=0;i<map.length;i++){
+  for(var j=0;j<map.length;j++){
+   if(map[i][j]==="x")
+    this.add(new Wall(1, j-offset,-(i-offset)));
+   else if(map[i][j]==="r")
+    this.add(new kirby(j-offset,-(i-offset)));
+  }
+ }
+}	
+
 function setup(){
  kirby = new Completo();
  kirby.prototype=new Agent();
@@ -89,15 +101,7 @@ var mapa = new Array();
  mapa[28] = "x                        xxxx";
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
  escena=new Environment();
- escena.setMap(var offset=Math.floor(map.length/2);
- for(var i=0;i<map.length;i++){
-  for(var j=0;j<map.length;j++){
-   if(map[i][j]==="x")
-    this.add(new Wall(1, j-offset,-(i-offset)));
-   else if(map[i][j]==="r")
-    this.add(new kirby(j-offset,-(i-offset)));
-  }
- });
+ escena.setMap(mapa);
  var floor=new THREE.Mesh(new THREE.BoxGeometry(28,30,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
  floor.position.z=-0.5;
  floor.position.x=-1.5;
