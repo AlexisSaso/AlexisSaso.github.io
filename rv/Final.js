@@ -68,9 +68,9 @@ Environment.prototype.setMap=function(map){
  for(var i=0;i<map.length;i++){
   for(var j=0;j<map.length;j++){
    if(map[i][j]==="x")
-    this.add(new Wall(1, j-offset,-(i-offset)));
+    escena.add(new Wall(1, j-offset,-(i-offset)));
    else if(map[i][j]==="r")
-    this.add(new kirby(j-offset,-(i-offset)));
+    escena.add(new kirby(j-offset,-(i-offset)));
   }
  }
 }
