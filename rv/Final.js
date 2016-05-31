@@ -31,6 +31,16 @@ THREE.Object3D.call(this);
 
 Completo.prototype = new THREE.Object3D();
 
+kirby.prototype.act=function(environment){
+ var command=this.actuator.commands.pop();
+ if(command==undefined)
+  console.log('Undefined command');
+ else if(command in this.operations)
+  this.operations[command](this);
+ else
+  console.log('Unknown command'); 
+}
+
 function Wall(size,x=0,y=0){
  THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,size), new THREE.MeshNormalMaterial()); 
  this.size=size;
