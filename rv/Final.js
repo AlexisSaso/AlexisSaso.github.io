@@ -88,6 +88,11 @@ luzconica.target = kirby;
 luzconica.intensity = 1;
 //------------
 
+luzPuntual = new THREE.PointLight(0xffffff);
+  luzPuntual.position.x=30;
+  luzPuntual.position.y=30;
+  luzPuntual.position.z=30;
+
 escena=new THREE.Scene();
 escena.add(cubo1);
 escena.add(cubo2);
@@ -101,6 +106,7 @@ escena.add(pared5);
 escena.add(kirby);
 escena.add(camara);
 escena.add(luzconica)
+ escena.add(luzPuntual);
 
 renderer=new THREE.WebGLRenderer();
 renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
