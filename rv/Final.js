@@ -31,36 +31,6 @@ THREE.Object3D.call(this);
 
 Completo.prototype = new THREE.Object3D();
 
-kirby.prototype.act=function(environment){
- var command=this.actuator.commands.pop();
- if(command==undefined)
-  console.log('Undefined command');
- else if(command in this.operations)
-  this.operations[command](this);
- else
-  console.log('Unknown command'); 
-}
-
-function Wall(size,x=0,y=0){
- THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,size), new THREE.MeshNormalMaterial()); 
- this.size=size;
- this.position.x=x;
- this.position.y=y;
-}
-Wall.prototype=new THREE.Mesh();
-
-Environment.prototype.setMap=function(map){
- var offset=Math.floor(map.length/2);
- for(var i=0;i<map.length;i++){
-  for(var j=0;j<map.length;j++){
-   if(map[i][j]==="x")
-    this.add(new Wall(1, j-offset,-(i-offset)));
-   else if(map[i][j]==="r")
-    this.add(new kirby(j-offset,-(i-offset)));
-  }
- }
-}	
-
 function setup(){
  kirby = new Completo();
  kirby.prototype=new Agent();
@@ -164,6 +134,36 @@ b4=0;
 b5=0;
 ajuste=0;
 }
+
+kirby.prototype.act=function(environment){
+ var command=this.actuator.commands.pop();
+ if(command==undefined)
+  console.log('Undefined command');
+ else if(command in this.operations)
+  this.operations[command](this);
+ else
+  console.log('Unknown command'); 
+}
+
+function Wall(size,x=0,y=0){
+ THREE.Mesh.call(this,new THREE.BoxGeometry(size,size,size), new THREE.MeshNormalMaterial()); 
+ this.size=size;
+ this.position.x=x;
+ this.position.y=y;
+}
+Wall.prototype=new THREE.Mesh();
+
+Environment.prototype.setMap=function(map){
+ var offset=Math.floor(map.length/2);
+ for(var i=0;i<map.length;i++){
+  for(var j=0;j<map.length;j++){
+   if(map[i][j]==="x")
+    this.add(new Wall(1, j-offset,-(i-offset)));
+   else if(map[i][j]==="r")
+    this.add(new kirby(j-offset,-(i-offset)));
+  }
+ }
+}	
 
 function loop(){
 //todos los posibles obstaculos
