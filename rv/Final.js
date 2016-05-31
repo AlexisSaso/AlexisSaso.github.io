@@ -1,3 +1,9 @@
+function Agent(x=0, y=0){
+ THREE.Object3D.call(this);   //Llama a cada objeto para que sean independientes
+ this.position.x=x;
+ this.position.y=y;
+}
+
 function kirby(x=0, y=0){
   Agent.call(this,x,y);
   THREE.ImageUtils.crossOrigin = '';
