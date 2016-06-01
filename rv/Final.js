@@ -98,12 +98,12 @@ var mapa = new Array();
  mapa[28] = "x                        xxxx";
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 escena=new Environment();
-var offset=Math.floor(map.length/2);
- for(var i=0;i<map.length;i++){
-  for(var j=0;j<map.length;j++){
-   if(map[i][j]==="x")
+var offset=Math.floor(mapa.length/2);
+ for(var i=0;i<mapa.length;i++){
+  for(var j=0;j<mapa.length;j++){
+   if(mapa[i][j]==="x")
     this.add(new Wall(1, j-offset,-(i-offset)));
-   else if(map[i][j]==="r")
+   else if(mapa[i][j]==="r")
     this.add(new kirby(j-offset,-(i-offset)));
   }
  }
