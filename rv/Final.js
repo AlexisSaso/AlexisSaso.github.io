@@ -1,4 +1,4 @@
-
+var keyboard = new THREEx.KeyboardState();
 function Completo(){
 THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
