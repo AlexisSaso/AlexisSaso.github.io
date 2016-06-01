@@ -177,7 +177,7 @@ document.body.appendChild(renderer.domElement);
 //OBJETIVOY=20;
 OBJETIVOX=35;
 OBJETIVOY=40;
-kirby.position.x=10;
+kirby.position.x=-10;
 kirby.position.y=-30;
 stepy=0.2;
 stepx=0.2;
@@ -186,21 +186,65 @@ c2=0;
 c3=0;
 c4=0;
 c5=0;
+c6=0;
+c7=0;
+c8=0;
+c9=0;
+c10=0;
+c11=0;
+c12=0;
+c13=0;
+c14=0;
+c15=0;
+c16=0;
+c17=0;
+c18=0;
+c19=0;
+c20=0;
 a1=0;
 a2=0;
 a3=0;
 a4=0;
 a5=0;
+a6=0;
+a7=0;
+a8=0;
+a9=0;
+a10=0;
+a11=0;
+a12=0;
+a13=0;
+a14=0;
+a15=0;
+a16=0;
+a17=0;
+a18=0;
+a19=0;
+a20=0;
 b1=0;
 b2=0;
 b3=0;
 b4=0;
 b5=0;
+b6=0;
+b7=0;
+b8=0;
+b9=0;
+b10=0;
+b11=0;
+b12=0;
+b13=0;
+b14=0;
+b15=0;
+b16=0;
+b17=0;
+b18=0;
+b19=0;
+b20=0;
 ajuste=0;
 }
 
 function loop(){
-//todos los posibles obstaculos
 obstaculo1D=raycaster1.intersectObject(pared1);
 obstaculo1I=raycaster2.intersectObject(pared1);
 obstaculo1U=raycaster3.intersectObject(pared1);
@@ -226,7 +270,81 @@ obstaculo5I=raycaster2.intersectObject(pared5);
 obstaculo5U=raycaster3.intersectObject(pared5);
 obstaculo5DD=raycaster4.intersectObject(pared5);
 
-//iluminar cubos
+obstaculo6D=raycaster1.intersectObject(pared6);
+obstaculo6I=raycaster2.intersectObject(pared6);
+obstaculo6U=raycaster3.intersectObject(pared6);
+obstaculo6DD=raycaster4.intersectObject(pared6);
+
+obstaculo7D=raycaster1.intersectObject(pared7);
+obstaculo7I=raycaster2.intersectObject(pared7);
+obstaculo7U=raycaster3.intersectObject(pared7);
+obstaculo7DD=raycaster4.intersectObject(pared7);
+
+obstaculo8D=raycaster1.intersectObject(pared8);
+obstaculo8I=raycaster2.intersectObject(pared8);
+obstaculo8U=raycaster3.intersectObject(pared8);
+obstaculo8DD=raycaster4.intersectObject(pared8);
+
+obstaculo9D=raycaster1.intersectObject(pared9);
+obstaculo9I=raycaster2.intersectObject(pared9);
+obstaculo9U=raycaster3.intersectObject(pared9);
+obstaculo9DD=raycaster4.intersectObject(pared9);
+
+obstaculo10D=raycaster1.intersectObject(pared10);
+obstaculo10I=raycaster2.intersectObject(pared10);
+obstaculo10U=raycaster3.intersectObject(pared10);
+obstaculo10DD=raycaster4.intersectObject(pared10);
+
+obstaculo11D=raycaster1.intersectObject(pared11);
+obstaculo11I=raycaster2.intersectObject(pared11);
+obstaculo11U=raycaster3.intersectObject(pared11);
+obstaculo11DD=raycaster4.intersectObject(pared11);
+
+obstaculo12D=raycaster1.intersectObject(pared12);
+obstaculo12I=raycaster2.intersectObject(pared12);
+obstaculo12U=raycaster3.intersectObject(pared12);
+obstaculo12DD=raycaster4.intersectObject(pared12);
+
+obstaculo13D=raycaster1.intersectObject(pared13);
+obstaculo13I=raycaster2.intersectObject(pared13);
+obstaculo13U=raycaster3.intersectObject(pared13);
+obstaculo13DD=raycaster4.intersectObject(pared13);
+
+obstaculo14D=raycaster1.intersectObject(pared14);
+obstaculo14I=raycaster2.intersectObject(pared14);
+obstaculo14U=raycaster3.intersectObject(pared14);
+obstaculo14DD=raycaster4.intersectObject(pared14);
+
+obstaculo15D=raycaster1.intersectObject(pared15);
+obstaculo15I=raycaster2.intersectObject(pared15);
+obstaculo15U=raycaster3.intersectObject(pared15);
+obstaculo15DD=raycaster4.intersectObject(pared15);
+
+obstaculo16D=raycaster1.intersectObject(pared16);
+obstaculo16I=raycaster2.intersectObject(pared16);
+obstaculo16U=raycaster3.intersectObject(pared16);
+obstaculo16DD=raycaster4.intersectObject(pared16);
+
+obstaculo17D=raycaster1.intersectObject(pared17);
+obstaculo17I=raycaster2.intersectObject(pared17);
+obstaculo17U=raycaster3.intersectObject(pared17);
+obstaculo17DD=raycaster4.intersectObject(pared17);
+
+obstaculo18D=raycaster1.intersectObject(pared18);
+obstaculo18I=raycaster2.intersectObject(pared18);
+obstaculo18U=raycaster3.intersectObject(pared18);
+obstaculo18DD=raycaster4.intersectObject(pared18);
+
+obstaculo19D=raycaster1.intersectObject(pared19);
+obstaculo19I=raycaster2.intersectObject(pared19);
+obstaculo19U=raycaster3.intersectObject(pared19);
+obstaculo19DD=raycaster4.intersectObject(pared19);
+
+obstaculo20D=raycaster1.intersectObject(pared20);
+obstaculo20I=raycaster2.intersectObject(pared20);
+obstaculo20U=raycaster3.intersectObject(pared20);
+obstaculo20DD=raycaster4.intersectObject(pared20);
+
 if((obstaculo1D.length>0 && (obstaculo1D[0].distance<=5))||(obstaculo1I.length>0 && (obstaculo1I[0].distance<=5))||(obstaculo1U.length>0 && (obstaculo1U[0].distance<=5))||(obstaculo1DD.length>0 && (obstaculo1DD[0].distance<=5)))
 {
 pared1.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
@@ -252,8 +370,82 @@ if((obstaculo5D.length>0 && (obstaculo5D[0].distance<=5))||(obstaculo5I.length>0
 c5=1;
 pared5.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
 };
+if((obstaculo6D.length>0 && (obstaculo6D[0].distance<=5))||(obstaculo6I.length>0 && (obstaculo6I[0].distance<=5))||(obstaculo6U.length>0 && (obstaculo6U[0].distance<=5))||(obstaculo6DD.length>0 && (obstaculo6DD[0].distance<=5)))
+{
+pared6.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+c6=1;
+};
+if((obstaculo7D.length>0 && (obstaculo7D[0].distance<=5))||(obstaculo7I.length>0 && (obstaculo7I[0].distance<=5))||(obstaculo7U.length>0 && (obstaculo7U[0].distance<=5))||(obstaculo7DD.length>0 && (obstaculo7DD[0].distance<=5)))
+{
+pared7.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+c7=1;
+};
+if((obstaculo8D.length>0 && (obstaculo8D[0].distance<=5))||(obstaculo8I.length>0 && (obstaculo8I[0].distance<=5))||(obstaculo8U.length>0 && (obstaculo8U[0].distance<=5))||(obstaculo8DD.length>0 && (obstaculo8DD[0].distance<=5)))
+{
+c8=1;
+pared8.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
+if((obstaculo9D.length>0 && (obstaculo9D[0].distance<=5))||(obstaculo9I.length>0 && (obstaculo9I[0].distance<=5))||(obstaculo9U.length>0 && (obstaculo9U[0].distance<=5))||(obstaculo9DD.length>0 && (obstaculo9DD[0].distance<=5)))
+{
+c9=1;
+pared9.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
+if((obstaculo10D.length>0 && (obstaculo10D[0].distance<=5))||(obstaculo10I.length>0 && (obstaculo10I[0].distance<=5))||(obstaculo10U.length>0 && (obstaculo10U[0].distance<=5))||(obstaculo10DD.length>0 && (obstaculo10DD[0].distance<=5)))
+{
+c10=1;
+pared10.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
+if((obstaculo11D.length>0 && (obstaculo11D[0].distance<=5))||(obstaculo11I.length>0 && (obstaculo11I[0].distance<=5))||(obstaculo11U.length>0 && (obstaculo11U[0].distance<=5))||(obstaculo11DD.length>0 && (obstaculo11DD[0].distance<=5)))
+{
+pared11.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+c11=1;
+};
+if((obstaculo12D.length>0 && (obstaculo12D[0].distance<=5))||(obstaculo12I.length>0 && (obstaculo12I[0].distance<=5))||(obstaculo12U.length>0 && (obstaculo12U[0].distance<=5))||(obstaculo12DD.length>0 && (obstaculo12DD[0].distance<=5)))
+{
+pared12.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+c12=1;
+};
+if((obstaculo13D.length>0 && (obstaculo13D[0].distance<=5))||(obstaculo13I.length>0 && (obstaculo13I[0].distance<=5))||(obstaculo13U.length>0 && (obstaculo13U[0].distance<=5))||(obstaculo13DD.length>0 && (obstaculo13DD[0].distance<=5)))
+{
+c13=1;
+pared13.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
+if((obstaculo14D.length>0 && (obstaculo14D[0].distance<=5))||(obstaculo14I.length>0 && (obstaculo14I[0].distance<=5))||(obstaculo14U.length>0 && (obstaculo14U[0].distance<=5))||(obstaculo14DD.length>0 && (obstaculo14DD[0].distance<=5)))
+{
+c14=1;
+pared14.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
+if((obstaculo15D.length>0 && (obstaculo15D[0].distance<=5))||(obstaculo15I.length>0 && (obstaculo15I[0].distance<=5))||(obstaculo15U.length>0 && (obstaculo15U[0].distance<=5))||(obstaculo15DD.length>0 && (obstaculo15DD[0].distance<=5)))
+{
+c15=1;
+pared15.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
+if((obstaculo16D.length>0 && (obstaculo16D[0].distance<=5))||(obstaculo16I.length>0 && (obstaculo16I[0].distance<=5))||(obstaculo16U.length>0 && (obstaculo16U[0].distance<=5))||(obstaculo16DD.length>0 && (obstaculo16DD[0].distance<=5)))
+{
+pared16.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+c16=1;
+};
+if((obstaculo17D.length>0 && (obstaculo17D[0].distance<=5))||(obstaculo17I.length>0 && (obstaculo17I[0].distance<=5))||(obstaculo17U.length>0 && (obstaculo17U[0].distance<=5))||(obstaculo17DD.length>0 && (obstaculo17DD[0].distance<=5)))
+{
+pared17.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+c17=1;
+};
+if((obstaculo18D.length>0 && (obstaculo18D[0].distance<=5))||(obstaculo18I.length>0 && (obstaculo18I[0].distance<=5))||(obstaculo18U.length>0 && (obstaculo18U[0].distance<=5))||(obstaculo18DD.length>0 && (obstaculo18DD[0].distance<=5)))
+{
+c18=1;
+pared18.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
+if((obstaculo19D.length>0 && (obstaculo19D[0].distance<=5))||(obstaculo19I.length>0 && (obstaculo19I[0].distance<=5))||(obstaculo19U.length>0 && (obstaculo19U[0].distance<=5))||(obstaculo19DD.length>0 && (obstaculo19DD[0].distance<=5)))
+{
+c19=1;
+pared19.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
+if((obstaculo20D.length>0 && (obstaculo20D[0].distance<=5))||(obstaculo20I.length>0 && (obstaculo20I[0].distance<=5))||(obstaculo20U.length>0 && (obstaculo20U[0].distance<=5))||(obstaculo20DD.length>0 && (obstaculo20DD[0].distance<=5)))
+{
+c20=1;
+pared20.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
+};
 
-//campos de obstaculos
 if((((pared1.position.y-kirby.position.y)*(pared1.position.y-kirby.position.y))>3)&&(((pared1.position.x-kirby.position.x)*(pared1.position.x-kirby.position.x))>2))
 {
 a1=(pared1.position.y-kirby.position.y)/((pared1.position.y-kirby.position.y)*(pared1.position.y-kirby.position.y));
@@ -284,6 +476,96 @@ a5=(pared5.position.y-kirby.position.y)/((pared5.position.y-kirby.position.y)*(p
 b5=(pared5.position.x-kirby.position.x)/((pared5.position.x-kirby.position.x)*(pared5.position.x-kirby.position.x));
 };
 
+if((((pared6.position.y-kirby.position.y)*(pared6.position.y-kirby.position.y))>3)&&(((pared6.position.x-kirby.position.x)*(pared6.position.x-kirby.position.x))>2))
+{
+a6=(pared6.position.y-kirby.position.y)/((pared6.position.y-kirby.position.y)*(pared6.position.y-kirby.position.y));
+b6=(pared6.position.x-kirby.position.x)/((pared6.position.x-kirby.position.x)*(pared6.position.x-kirby.position.x));
+};
+
+if((((pared7.position.y-kirby.position.y)*(pared7.position.y-kirby.position.y))>3)&&(((pared7.position.x-kirby.position.x)*(pared7.position.x-kirby.position.x))>2))
+{
+a7=(pared7.position.y-kirby.position.y)/((pared7.position.y-kirby.position.y)*(pared7.position.y-kirby.position.y));
+b7=(pared7.position.x-kirby.position.x)/((pared7.position.x-kirby.position.x)*(pared7.position.x-kirby.position.x));
+};
+
+if((((pared8.position.y-kirby.position.y)*(pared8.position.y-kirby.position.y))>3)&&(((pared8.position.x-kirby.position.x)*(pared8.position.x-kirby.position.x))>2))
+{
+a8=(pared8.position.y-kirby.position.y)/((pared8.position.y-kirby.position.y)*(pared8.position.y-kirby.position.y));
+b8=(pared8.position.x-kirby.position.x)/((pared8.position.x-kirby.position.x)*(pared8.position.x-kirby.position.x));
+};
+
+if((((pared9.position.y-kirby.position.y)*(pared9.position.y-kirby.position.y))>4)&&(((pared9.position.x-kirby.position.x)*(pared9.position.x-kirby.position.x))>2))
+{
+a9=(pared9.position.y-kirby.position.y)/((pared9.position.y-kirby.position.y)*(pared9.position.y-kirby.position.y));
+b9=(pared9.position.x-kirby.position.x)/((pared9.position.x-kirby.position.x)*(pared9.position.x-kirby.position.x));
+};
+
+if((((pared10.position.y-kirby.position.y)*(pared10.position.y-kirby.position.y))>5)&&(((pared10.position.x-kirby.position.x)*(pared10.position.x-kirby.position.x))>2))
+{
+a10=(pared10.position.y-kirby.position.y)/((pared10.position.y-kirby.position.y)*(pared10.position.y-kirby.position.y));
+b10=(pared10.position.x-kirby.position.x)/((pared10.position.x-kirby.position.x)*(pared10.position.x-kirby.position.x));
+};
+
+if((((pared11.position.y-kirby.position.y)*(pared11.position.y-kirby.position.y))>3)&&(((pared11.position.x-kirby.position.x)*(pared11.position.x-kirby.position.x))>2))
+{
+a11=(pared11.position.y-kirby.position.y)/((pared11.position.y-kirby.position.y)*(pared11.position.y-kirby.position.y));
+b11=(pared11.position.x-kirby.position.x)/((pared11.position.x-kirby.position.x)*(pared11.position.x-kirby.position.x));
+};
+
+if((((pared12.position.y-kirby.position.y)*(pared12.position.y-kirby.position.y))>3)&&(((pared12.position.x-kirby.position.x)*(pared12.position.x-kirby.position.x))>2))
+{
+a12=(pared12.position.y-kirby.position.y)/((pared12.position.y-kirby.position.y)*(pared12.position.y-kirby.position.y));
+b12=(pared12.position.x-kirby.position.x)/((pared12.position.x-kirby.position.x)*(pared12.position.x-kirby.position.x));
+};
+
+if((((pared13.position.y-kirby.position.y)*(pared13.position.y-kirby.position.y))>3)&&(((pared13.position.x-kirby.position.x)*(pared13.position.x-kirby.position.x))>2))
+{
+a13=(pared13.position.y-kirby.position.y)/((pared13.position.y-kirby.position.y)*(pared13.position.y-kirby.position.y));
+b13=(pared13.position.x-kirby.position.x)/((pared13.position.x-kirby.position.x)*(pared13.position.x-kirby.position.x));
+};
+
+if((((pared14.position.y-kirby.position.y)*(pared14.position.y-kirby.position.y))>4)&&(((pared14.position.x-kirby.position.x)*(pared14.position.x-kirby.position.x))>2))
+{
+a14=(pared14.position.y-kirby.position.y)/((pared14.position.y-kirby.position.y)*(pared14.position.y-kirby.position.y));
+b14=(pared14.position.x-kirby.position.x)/((pared14.position.x-kirby.position.x)*(pared14.position.x-kirby.position.x));
+};
+
+if((((pared15.position.y-kirby.position.y)*(pared15.position.y-kirby.position.y))>5)&&(((pared15.position.x-kirby.position.x)*(pared15.position.x-kirby.position.x))>2))
+{
+a15=(pared15.position.y-kirby.position.y)/((pared15.position.y-kirby.position.y)*(pared15.position.y-kirby.position.y));
+b15=(pared15.position.x-kirby.position.x)/((pared15.position.x-kirby.position.x)*(pared15.position.x-kirby.position.x));
+};
+
+if((((pared16.position.y-kirby.position.y)*(pared16.position.y-kirby.position.y))>3)&&(((pared16.position.x-kirby.position.x)*(pared16.position.x-kirby.position.x))>2))
+{
+a16=(pared16.position.y-kirby.position.y)/((pared16.position.y-kirby.position.y)*(pared16.position.y-kirby.position.y));
+b16=(pared16.position.x-kirby.position.x)/((pared16.position.x-kirby.position.x)*(pared16.position.x-kirby.position.x));
+};
+
+if((((pared17.position.y-kirby.position.y)*(pared17.position.y-kirby.position.y))>3)&&(((pared17.position.x-kirby.position.x)*(pared17.position.x-kirby.position.x))>2))
+{
+a17=(pared17.position.y-kirby.position.y)/((pared17.position.y-kirby.position.y)*(pared17.position.y-kirby.position.y));
+b17=(pared17.position.x-kirby.position.x)/((pared17.position.x-kirby.position.x)*(pared17.position.x-kirby.position.x));
+};
+
+if((((pared18.position.y-kirby.position.y)*(pared18.position.y-kirby.position.y))>3)&&(((pared18.position.x-kirby.position.x)*(pared18.position.x-kirby.position.x))>2))
+{
+a18=(pared18.position.y-kirby.position.y)/((pared18.position.y-kirby.position.y)*(pared18.position.y-kirby.position.y));
+b18=(pared18.position.x-kirby.position.x)/((pared18.position.x-kirby.position.x)*(pared18.position.x-kirby.position.x));
+};
+
+if((((pared19.position.y-kirby.position.y)*(pared19.position.y-kirby.position.y))>4)&&(((pared19.position.x-kirby.position.x)*(pared19.position.x-kirby.position.x))>2))
+{
+a19=(pared19.position.y-kirby.position.y)/((pared19.position.y-kirby.position.y)*(pared19.position.y-kirby.position.y));
+b19=(pared19.position.x-kirby.position.x)/((pared19.position.x-kirby.position.x)*(pared19.position.x-kirby.position.x));
+};
+
+if((((pared20.position.y-kirby.position.y)*(pared20.position.y-kirby.position.y))>5)&&(((pared20.position.x-kirby.position.x)*(pared20.position.x-kirby.position.x))>2))
+{
+a20=(pared20.position.y-kirby.position.y)/((pared20.position.y-kirby.position.y)*(pared20.position.y-kirby.position.y));
+b20=(pared20.position.x-kirby.position.x)/((pared20.position.x-kirby.position.x)*(pared20.position.x-kirby.position.x));
+};
+
 if(((pared1.position.y-kirby.position.y)*(pared1.position.y-kirby.position.y))>4)
 b1=0;
 if(((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y))>4)
@@ -294,6 +576,36 @@ if(((pared4.position.y-kirby.position.y)*(pared4.position.y-kirby.position.y))>4
 b4=0;
 if(((pared5.position.y-kirby.position.y)*(pared5.position.y-kirby.position.y))>4)
 b5=0;
+if(((pared6.position.y-kirby.position.y)*(pared6.position.y-kirby.position.y))>4)
+b6=0;
+if(((pared7.position.y-kirby.position.y)*(pared7.position.y-kirby.position.y))>4)
+b7=0;
+if(((pared8.position.y-kirby.position.y)*(pared8.position.y-kirby.position.y))>4)
+b8=0;
+if(((pared9.position.y-kirby.position.y)*(pared9.position.y-kirby.position.y))>4)
+b9=0;
+if(((pared10.position.y-kirby.position.y)*(pared10.position.y-kirby.position.y))>4)
+b10=0;
+if(((pared11.position.y-kirby.position.y)*(pared11.position.y-kirby.position.y))>4)
+b11=0;
+if(((pared12.position.y-kirby.position.y)*(pared12.position.y-kirby.position.y))>4)
+b12=0;
+if(((pared13.position.y-kirby.position.y)*(pared13.position.y-kirby.position.y))>4)
+b13=0;
+if(((pared14.position.y-kirby.position.y)*(pared14.position.y-kirby.position.y))>4)
+b14=0;
+if(((pared15.position.y-kirby.position.y)*(pared15.position.y-kirby.position.y))>4)
+b15=0;
+if(((pared16.position.y-kirby.position.y)*(pared16.position.y-kirby.position.y))>4)
+b16=0;
+if(((pared17.position.y-kirby.position.y)*(pared17.position.y-kirby.position.y))>4)
+b17=0;
+if(((pared18.position.y-kirby.position.y)*(pared18.position.y-kirby.position.y))>4)
+b18=0;
+if(((pared19.position.y-kirby.position.y)*(pared19.position.y-kirby.position.y))>4)
+b19=0;
+if(((pared20.position.y-kirby.position.y)*(pared20.position.y-kirby.position.y))>4)
+b20=0;
 
 if(((pared1.position.x-kirby.position.x)*(pared1.position.x-kirby.position.x))>4)
 a1=0;
@@ -305,9 +617,39 @@ if(((pared4.position.x-kirby.position.x)*(pared4.position.x-kirby.position.x))>4
 a4=0;
 if(((pared5.position.x-kirby.position.x)*(pared5.position.x-kirby.position.x))>4)
 a5=0;
+if(((pared6.position.x-kirby.position.x)*(pared6.position.x-kirby.position.x))>4)
+a6=0;
+if(((pared7.position.x-kirby.position.x)*(pared7.position.x-kirby.position.x))>4)
+a7=0;
+if(((pared8.position.x-kirby.position.x)*(pared8.position.x-kirby.position.x))>4)
+a8=0;
+if(((pared9.position.x-kirby.position.x)*(pared9.position.x-kirby.position.x))>4)
+a9=0;
+if(((pared10.position.x-kirby.position.x)*(pared10.position.x-kirby.position.x))>4)
+a10=0;
+if(((pared11.position.x-kirby.position.x)*(pared11.position.x-kirby.position.x))>4)
+a11=0;
+if(((pared12.position.x-kirby.position.x)*(pared12.position.x-kirby.position.x))>4)
+a12=0;
+if(((pared13.position.x-kirby.position.x)*(pared13.position.x-kirby.position.x))>4)
+a13=0;
+if(((pared14.position.x-kirby.position.x)*(pared14.position.x-kirby.position.x))>4)
+a14=0;
+if(((pared15.position.x-kirby.position.x)*(pared15.position.x-kirby.position.x))>4)
+a15=0;
+if(((pared16.position.x-kirby.position.x)*(pared16.position.x-kirby.position.x))>4)
+a16=0;
+if(((pared17.position.x-kirby.position.x)*(pared17.position.x-kirby.position.x))>4)
+a17=0;
+if(((pared18.position.x-kirby.position.x)*(pared18.position.x-kirby.position.x))>4)
+a18=0;
+if(((pared19.position.x-kirby.position.x)*(pared19.position.x-kirby.position.x))>4)
+a19=0;
+if(((pared20.position.x-kirby.position.x)*(pared20.position.x-kirby.position.x))>4)
+a20=0;
 
-stepy=((OBJETIVOY-kirby.position.y)/100)-(c1*a1)-(c2*a2)-(c3*a3)-(c4*a4)-(c5*a5);
-stepx=((OBJETIVOX-kirby.position.x)/100)-(c1*b1)-(c2*b2)-(c3*b3)-(c4*b4)-(c5*b5);
+stepy=((OBJETIVOY-kirby.position.y)/100)-(c1*a1)-(c2*a2)-(c3*a3)-(c4*a4)-(c5*a5)-(c6*a6)-(c7*a7)-(c8*a8)-(c9*a9)-(c10*a10)-(c11*a11)-(c12*a12)-(c13*a13)-(c14*a14)-(c15*a15)-(c16*a16)-(c17*a17)-(c18*a18)-(c19*a19)-(c20*a20);
+stepx=((OBJETIVOX-kirby.position.x)/100)-(c1*b1)-(c2*b2)-(c3*b3)-(c4*b4)-(c5*b5)-(c6*b6)-(c7*b7)-(c8*b8)-(c9*b9)-(c10*b10)-(c11*b11)-(c12*b12)-(c13*b13)-(c14*b14)-(c15*b15)-(c16*b16)-(c17*b17)-(c18*b18)-(c19*b19)-(c20*b20);
 
 if((((OBJETIVOY-kirby.position.y)*(OBJETIVOY-kirby.position.y))<2)&&(((OBJETIVOY-kirby.position.y)*(OBJETIVOY-kirby.position.y))<2))
 kirby.material= new  THREE.MeshBasicMaterial({color:'#0000ff'});
