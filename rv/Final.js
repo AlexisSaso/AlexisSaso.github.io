@@ -62,8 +62,8 @@ cubo3.position.y=-37;
 cubo4.position.y=37;
 cubo4.position.x=-5;
 
-pared1.position.x=10;
-pared1.position.y=10;
+pared1.position.x=20;
+pared1.position.y=-10;
 pared2.position.x=20;
 pared2.position.y=15;
 pared3.position.x=25;
@@ -116,8 +116,8 @@ document.body.appendChild(renderer.domElement);
 //seleccionar objetivo
 //OBJETIVOX=-20;
 //OBJETIVOY=20;
-OBJETIVOX=30;
-OBJETIVOY=30;
+OBJETIVOX=35;
+OBJETIVOY=40;
 kirby.position.x=10;
 kirby.position.y=-30;
 stepy=0.2;
