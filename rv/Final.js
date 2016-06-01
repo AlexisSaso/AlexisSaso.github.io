@@ -107,7 +107,6 @@ var offset=Math.floor(map.length/2);
     this.add(new kirby(j-offset,-(i-offset)));
   }
  }
-}	
  var floor=new THREE.Mesh(new THREE.BoxGeometry(28,30,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
  floor.position.z=-0.5;
  floor.position.x=-1.5;
