@@ -224,9 +224,9 @@ entorno=new Environment();
  renderer = new THREE.WebGLRenderer();
  renderer.setSize(window.innerHeight*0.95, window.innerHeight*0.95);
  document.body.appendChild(renderer.domElement);
-escena.add(floor);
-escena.add(camara);
-escena.add(iluminacion);
+entorno.add(floor);
+entorno.add(camara);
+entorno.add(iluminacion);
 
  renderer.shadowMap.enabled=true;
  floor.receiveShadow=true;
