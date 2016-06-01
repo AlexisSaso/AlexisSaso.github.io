@@ -79,10 +79,10 @@ function Completo(){
  raycaster3=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,1,0));
  raycaster4=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,-1,0));
  
- var floor=new THREE.Mesh(new THREE.BoxGeometry(28,30,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
- floor.position.z=-0.5;
- floor.position.x=-1.5;
- floor.position.y=0.5;
+ var floor=new THREE.Mesh(new THREE.BoxGeometry(80,80,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
+ floor.position.z=0;
+ floor.position.x=0;
+ floor.position.y=0;
  iluminacion = new THREE.PointLight(0xffffff);
  iluminacion.position.z=20;
  iluminacion.position.y=10;
