@@ -79,10 +79,6 @@ function Completo(){
  raycaster3=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,1,0));
  raycaster4=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,-1,0));
  
- var floor=new THREE.Mesh(new THREE.BoxGeometry(80,80,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
- floor.position.z=0;
- floor.position.x=0;
- floor.position.y=0;
  iluminacion = new THREE.PointLight(0xffffff);
  iluminacion.position.z=20;
  iluminacion.position.y=10;
@@ -108,7 +104,6 @@ function Completo(){
  escena.add(camara);
  escena.add(luzconica);
  escena.add(iluminacion);
- escena.add(floor); 
  renderer=new THREE.WebGLRenderer();
  renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
  document.body.appendChild(renderer.domElement);
