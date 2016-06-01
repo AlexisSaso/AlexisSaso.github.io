@@ -74,7 +74,7 @@ pared5.position.x=15;
 pared5.position.y=-20;
 
 camara=new THREE.PerspectiveCamera();
-camara.position.z=80;
+camara.position.z=120;
 
 raycaster1=new THREE.Raycaster(kirby.position,new THREE.Vector3(1,0,0));
 raycaster2=new THREE.Raycaster(kirby.position,new THREE.Vector3(-1,0,0));
