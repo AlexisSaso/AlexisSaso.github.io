@@ -62,16 +62,16 @@ cubo3.position.y=-37;
 cubo4.position.y=37;
 cubo4.position.x=-5;
 
-pared1.position.x=15;
+pared1.position.x=10;
 pared1.position.y=10;
-pared2.position.x=25;
+pared2.position.x=35;
 pared2.position.y=15;
-pared3.position.x=0;
-pared3.position.y=0;
+pared3.position.x=20;
+pared3.position.y=5;
 pared4.position.x=35;
 pared4.position.y=20;
 pared5.position.x=35;
-pared5.position.y=-35;
+pared5.position.y=35;
 
 camara=new THREE.PerspectiveCamera();
 camara.position.z=120;
