@@ -60,6 +60,7 @@ cubo1.position.x=37;
 cubo2.position.x=-37;
 cubo3.position.y=-37;
 cubo4.position.y=37;
+cubo4.position.x=-30;
 
 pared1.position.x=-15;
 pared1.position.y=-10;
