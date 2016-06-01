@@ -45,7 +45,7 @@ var textura = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures
 cubo1=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({map:textura}));
 cubo2=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({map:textura}));
 cubo3=new THREE.Mesh(new THREE.BoxGeometry(80,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
-cubo4=new THREE.Mesh(new THREE.BoxGeometry(60,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
+cubo4=new THREE.Mesh(new THREE.BoxGeometry(-75,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
 
 
 //los obstaculos
@@ -60,7 +60,7 @@ cubo1.position.x=37;
 cubo2.position.x=-37;
 cubo3.position.y=-37;
 cubo4.position.y=37;
-cubo4.position.x=-30;
+cubo4.position.x=-5;
 
 pared1.position.x=-15;
 pared1.position.y=-10;
