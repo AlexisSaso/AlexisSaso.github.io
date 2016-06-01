@@ -97,52 +97,40 @@ var mapa = new Array();
  mapa[27] = "x r                      xxxx";
  mapa[28] = "x                        xxxx";
  mapa[29] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-escena=new Environment();
-var offset=Math.floor(mapa.length/2);
- for(var i=0;i<mapa.length;i++){
-  for(var j=0;j<mapa.length;j++){
-   if(mapa[i][j]==="x")
-    escena.add(new Wall(1, j-offset,-(i-offset)));
-   else if(mapa[i][j]==="r")
-    escena.add(new kirby(j-offset,-(i-offset)));
-  }
- }
+entorno=new Environment();
+ entorno.setMap(mapa);
  var floor=new THREE.Mesh(new THREE.BoxGeometry(28,30,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
  floor.position.z=-0.5;
  floor.position.x=-1.5;
  floor.position.y=0.5;
+ iluminacion = new THREE.PointLight(0xffffff);
+ iluminacion.position.z=20;
+ iluminacion.position.y=10;
+ 
+ var luzconica = new THREE.SpotLight( 0xffffff );
+kirby.add(luzconica);
+luzconica.position.set(0,5,5);
+luzconica.target = kirby;
+luzconica.intensity = 1;
+ 
+ camara=new THREE.PerspectiveCamera();
+ camara.position.z=40;
+ renderer = new THREE.WebGLRenderer();
+ renderer.setSize(window.innerHeight*0.95, window.innerHeight*0.95);
+ document.body.appendChild(renderer.domElement);
+escena.add(floor);
+escena.add(camara);
+escena.add(luzconica)
+escena.add(iluminacion);
 
-camara=new THREE.PerspectiveCamera();
-camara.position.z=80;
+ renderer.shadowMap.enabled=true;
+ floor.receiveShadow=true;
+ iluminacion.castShadow=true;
 
 raycaster1=new THREE.Raycaster(kirby.position,new THREE.Vector3(1,0,0));
 raycaster2=new THREE.Raycaster(kirby.position,new THREE.Vector3(-1,0,0));
 raycaster3=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,1,0));
 raycaster4=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,-1,0));
-
-
-//Creo la luz conica-----
-var luzconica = new THREE.SpotLight( 0xffffff );
-kirby.add(luzconica);
-luzconica.position.set(0,5,5);
-luzconica.target = kirby;
-luzconica.intensity = 1;
-//------------
-
-luzPuntual = new THREE.PointLight(0xffffff);
-  luzPuntual.position.x=30;
-  luzPuntual.position.y=30;
-  luzPuntual.position.z=30;
-
-escena.add(floor);
-escena.add(camara);
-escena.add(luzconica)
-escena.add(luzPuntual);
-kirby.position.x=-20;
-kirby.position.y=-20;
-renderer=new THREE.WebGLRenderer();
-renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
-document.body.appendChild(renderer.domElement);
 
 //seleccionar objetivo
 //OBJETIVOX=-20;
