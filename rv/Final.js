@@ -116,8 +116,8 @@ document.body.appendChild(renderer.domElement);
 //seleccionar objetivo
 //OBJETIVOX=-20;
 //OBJETIVOY=20;
-OBJETIVOX=10;
-OBJETIVOY=20;
+OBJETIVOX=40;
+OBJETIVOY=40;
 kirby.position.x=-30;
 kirby.position.y=-10;
 stepy=0.2;
