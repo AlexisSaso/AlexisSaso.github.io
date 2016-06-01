@@ -108,7 +108,7 @@ function Completo(){
  escena.add(camara);
  escena.add(luzconica);
  escena.add(iluminacion);
- escena add(floor); 
+ escena.add(floor); 
  renderer=new THREE.WebGLRenderer();
  renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
  document.body.appendChild(renderer.domElement);
