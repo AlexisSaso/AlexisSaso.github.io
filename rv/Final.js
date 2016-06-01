@@ -102,9 +102,9 @@ var offset=Math.floor(mapa.length/2);
  for(var i=0;i<mapa.length;i++){
   for(var j=0;j<mapa.length;j++){
    if(mapa[i][j]==="x")
-    this.add(new Wall(1, j-offset,-(i-offset)));
+    escena.add(new Wall(1, j-offset,-(i-offset)));
    else if(mapa[i][j]==="r")
-    this.add(new kirby(j-offset,-(i-offset)));
+    escena.add(new kirby(j-offset,-(i-offset)));
   }
  }
  var floor=new THREE.Mesh(new THREE.BoxGeometry(28,30,0.1), new THREE.MeshLambertMaterial({color:0x00ff00}));
