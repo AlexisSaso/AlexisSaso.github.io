@@ -200,7 +200,7 @@ a1=(pared1.position.y-kirby.position.y)/((pared1.position.y-kirby.position.y)*(p
 b1=(pared1.position.x-kirby.position.x)/((pared1.position.x-kirby.position.x)*(pared1.position.x-kirby.position.x));
 };
 
-if((((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y))>5)&&(((pared2.position.x-kirby.position.x)*(pared2.position.x-kirby.position.x))>5)
+if((((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y))>5)&&(((pared2.position.x-kirby.position.x)*(pared2.position.x-kirby.position.x))>5))
 {
 a2=(pared2.position.y-kirby.position.y)/((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y));
 b2=(pared2.position.x-kirby.position.x)/((pared2.position.x-kirby.position.x)*(pared2.position.x-kirby.position.x));
