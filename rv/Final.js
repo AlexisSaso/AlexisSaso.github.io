@@ -36,16 +36,14 @@ function setup(){
  kirby = new Completo();
   step  =0.01;
   stepbrazo = 0.017;
-  
-//Escenario
-THREE.ImageUtils.crossOrigin='';
-var textura = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
 
-//la habitacion  
-cubo1=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({map:textura}));
-cubo2=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({map:textura}));
-cubo3=new THREE.Mesh(new THREE.BoxGeometry(80,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
-cubo4=new THREE.Mesh(new THREE.BoxGeometry(65,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
+THREE.ImageUtils.crossOrigin='';
+
+
+cubo1=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({color:'#ffff00'}));
+cubo2=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({color:'#ffff00'}));
+cubo3=new THREE.Mesh(new THREE.BoxGeometry(80,0.5,3),new THREE.MeshBasicMaterial({color:'#ffff00'}));
+cubo4=new THREE.Mesh(new THREE.BoxGeometry(65,0.5,3),new THREE.MeshBasicMaterial({color:'#ffff00'}));
 
 
 //los obstaculos
@@ -54,6 +52,22 @@ pared2= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMateria
 pared3= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
 pared4= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
 pared5= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared6= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared7= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared8= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared9= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared10= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared11= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared12= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared13= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared14= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared15= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared16= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared17= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared18= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared19= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+pared20= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
+
 
 
 cubo1.position.x=37;
@@ -62,16 +76,46 @@ cubo3.position.y=-37;
 cubo4.position.y=37;
 cubo4.position.x=-5;
 
-pared1.position.x=20;
-pared1.position.y=-10;
-pared2.position.x=20;
-pared2.position.y=15;
-pared3.position.x=25;
-pared3.position.y=5;
-pared4.position.x=35;
-pared4.position.y=20;
+pared1.position.x=-20;
+pared1.position.y=-20;
+pared2.position.x=0;
+pared2.position.y=-20;
+pared3.position.x=20;
+pared3.position.y=-20;
+pared4.position.x=0;
+pared4.position.y=0;
 pared5.position.x=30;
 pared5.position.y=30;
+pared6.position.x=20;
+pared6.position.y=20;
+pared7.position.x=10;
+pared7.position.y=10;
+pared8.position.x=-25;
+pared8.position.y=-5;
+pared9.position.x=-35;
+pared9.position.y=-20;
+pared10.position.x=-30;
+pared10.position.y=-30;
+pared11.position.x=-20;
+pared11.position.y=-10;
+pared12.position.x=20;
+pared12.position.y=-15;
+pared13.position.x=-25;
+pared13.position.y=-5;
+pared14.position.x=35;
+pared14.position.y=-20;
+pared15.position.x=30;
+pared15.position.y=10;
+pared16.position.x=20;
+pared16.position.y=10;
+pared17.position.x=20;
+pared17.position.y=-15;
+pared18.position.x=-25;
+pared18.position.y=5;
+pared19.position.x=35;
+pared19.position.y=-20;
+pared20.position.x=30;
+pared20.position.y=-30;
 
 camara=new THREE.PerspectiveCamera();
 camara.position.z=120;
