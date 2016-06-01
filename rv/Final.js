@@ -44,7 +44,7 @@ function Completo(){
  cubo1=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({map:textura}));
  cubo2=new THREE.Mesh(new THREE.BoxGeometry(0.5,80,3),new THREE.MeshBasicMaterial({map:textura}));
  cubo3=new THREE.Mesh(new THREE.BoxGeometry(80,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
- cubo4=new THREE.Mesh(new THREE.BoxGeometry(80,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
+ cubo4=new THREE.Mesh(new THREE.BoxGeometry(70,0.5,3),new  THREE.MeshBasicMaterial({map:textura}));
  
  
  //los obstaculos
@@ -55,21 +55,21 @@ function Completo(){
  pared5= new THREE.Mesh(new THREE.BoxGeometry(2,2,3),new THREE.MeshLambertMaterial({color:'#ffff00'}));
  
  
- cubo1.position.x=37;
- cubo2.position.x=-37;
- cubo3.position.y=-37;
- cubo4.position.y=37;
+ cubo1.position.x=40;
+ cubo2.position.x=-40;
+ cubo3.position.y=-40;
+ cubo4.position.y=40;
  
- pared1.position.x=-15;
- pared1.position.y=-10;
- pared2.position.x=-15;
- pared2.position.y=10;
+ pared1.position.x=10;
+ pared1.position.y=30;
+ pared2.position.x=20;
+ pared2.position.y=20;
  pared3.position.x=0;
  pared3.position.y=0;
- pared4.position.x=15;
- pared4.position.y=10;
- pared5.position.x=15;
- pared5.position.y=-20;
+ pared4.position.x=-15;
+ pared4.position.y=-10;
+ pared5.position.x=35;
+ pared5.position.y=35;
  
  camara=new THREE.PerspectiveCamera();
  camara.position.z=80;
@@ -116,8 +116,8 @@ function Completo(){
  //seleccionar objetivo
  //OBJETIVOX=-20;
  //OBJETIVOY=20;
- OBJETIVOX=10;
- OBJETIVOY=20;
+ OBJETIVOX=40;
+ OBJETIVOY=40;
  
  stepy=0.2;
  stepx=0.2;
