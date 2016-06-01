@@ -664,6 +664,23 @@ kirby.rotation.z=Math.atan(stepy/stepx)-1.57+(3.14*ajuste);
 
 ajuste=0;
 
+if (keyboard.pressed("A")) {
+kirby.position.x=0;
+kirby.position.y=-30;
+}
+
+if (keyboard.pressed("S")) {
+kirby.position.x=-20;
+kirby.position.y=-30;
+}
+
+if (keyboard.pressed("D")) {
+kirby.position.x=20;
+kirby.position.y=-30;
+}
+
+
+
 //sensores
 raycaster1.set(kirby.position,new THREE.Vector3(1,0,0));
 raycaster2.set(kirby.position,new THREE.Vector3(-1,0,0));
