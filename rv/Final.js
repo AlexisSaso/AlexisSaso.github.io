@@ -78,7 +78,7 @@ cubo4.position.x=-5;
 
 pared1.position.x=-30;
 pared1.position.y=-30;
-pared2.position.x=-5;
+pared2.position.x=-10;
 pared2.position.y=-30;
 pared3.position.x=10;
 pared3.position.y=-30;
@@ -110,7 +110,7 @@ pared16.position.x=-10;
 pared16.position.y=10;
 pared17.position.x=10;
 pared17.position.y=10;
-pared18.position.x=20;
+pared18.position.x=30;
 pared18.position.y=10;
 pared19.position.x=-20;
 pared19.position.y=30;
