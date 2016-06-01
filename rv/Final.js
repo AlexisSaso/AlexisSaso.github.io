@@ -118,7 +118,8 @@ document.body.appendChild(renderer.domElement);
 //OBJETIVOY=20;
 OBJETIVOX=10;
 OBJETIVOY=20;
-
+kirby.position.x=-30;
+kirby.position.y=-10;
 stepy=0.2;
 stepx=0.2;
 c1=0;
