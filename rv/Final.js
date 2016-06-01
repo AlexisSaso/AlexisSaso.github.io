@@ -665,20 +665,24 @@ kirby.rotation.z=Math.atan(stepy/stepx)-1.57+(3.14*ajuste);
 ajuste=0;
 
 if (keyboard.pressed("A")) {
-kirby.position.x=0;
-kirby.position.y=-30;
+OBJETIVOX=0;
+OBJETIVOY=-30;
 }
 
-if (keyboard.pressed("S")) {
-kirby.position.x=-20;
-kirby.position.y=-30;
+else if (keyboard.pressed("S")) {
+OBJETIVOX=-20;
+OBJETIVOY=-30;
 }
 
-if (keyboard.pressed("D")) {
-kirby.position.x=20;
-kirby.position.y=-30;
+else if (keyboard.pressed("D")) {
+OBJETIVOX=20;
+OBJETIVOY=-30;
 }
 
+else{
+OBJETIVOX=35;
+OBJETIVOY=40;
+}
 
 
 //sensores
