@@ -651,8 +651,11 @@ a20=0;
 stepy=((OBJETIVOY-kirby.position.y)/100)-(c1*a1)-(c2*a2)-(c3*a3)-(c4*a4)-(c5*a5)-(c6*a6)-(c7*a7)-(c8*a8)-(c9*a9)-(c10*a10)-(c11*a11)-(c12*a12)-(c13*a13)-(c14*a14)-(c15*a15)-(c16*a16)-(c17*a17)-(c18*a18)-(c19*a19)-(c20*a20);
 stepx=((OBJETIVOX-kirby.position.x)/100)-(c1*b1)-(c2*b2)-(c3*b3)-(c4*b4)-(c5*b5)-(c6*b6)-(c7*b7)-(c8*b8)-(c9*b9)-(c10*b10)-(c11*b11)-(c12*b12)-(c13*b13)-(c14*b14)-(c15*b15)-(c16*b16)-(c17*b17)-(c18*b18)-(c19*b19)-(c20*b20);
 
-if((((OBJETIVOY-kirby.position.y)*(OBJETIVOY-kirby.position.y))<2)&&(((OBJETIVOY-kirby.position.y)*(OBJETIVOY-kirby.position.y))<2))
-kirby.material= new  THREE.MeshBasicMaterial({color:'#0000ff'});
+if((((OBJETIVOY-kirby.position.y)*(OBJETIVOY-kirby.position.y))<2)&&(((OBJETIVOY-kirby.position.y)*(OBJETIVOY-kirby.position.y))<2)){
+  OBJETIVOX=20;
+OBJETIVOY=-30;
+}
+
 
 kirby.position.y +=stepy;
 kirby.position.x +=stepx;
