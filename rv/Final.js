@@ -217,12 +217,7 @@ entorno=new Environment();
  iluminacion = new THREE.PointLight(0xffffff);
  iluminacion.position.z=20;
  iluminacion.position.y=10;
- 
- var luzconica = new THREE.SpotLight( 0xffffff );
-kirby.add(luzconica);
-luzconica.position.set(0,5,5);
-luzconica.target = kirby;
-luzconica.intensity = 1;
+
  
  camara=new THREE.PerspectiveCamera();
  camara.position.z=40;
@@ -231,7 +226,6 @@ luzconica.intensity = 1;
  document.body.appendChild(renderer.domElement);
 escena.add(floor);
 escena.add(camara);
-escena.add(luzconica)
 escena.add(iluminacion);
 
  renderer.shadowMap.enabled=true;
