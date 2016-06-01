@@ -4,9 +4,45 @@ function Agent(x=0, y=0){
  this.position.y=y;
 }
 
+Agent.prototype = new THREE.Object3D();
+
+Agent.prototype.sense = function(environment) {};
+Agent.prototype.plan = function(environment) {};
+Agent.prototype.act = function(environment) {};
+
 function Environment() {
  THREE.Scene.call(this);
 }
+
+Environment.prototype = new THREE.Scene();
+
+Environment.prototype.sense = function() {
+ for(var i=0; i<this.children.length; i++){
+  if(this.children[i].sense!==undefined)
+   this.children[i].sense(this);
+ }
+}
+
+Environment.prototype.plan = function() {
+ for(var i=0; i<this.children.length; i++){
+  if(this.children[i].plan!==undefined)
+   this.children[i].plan(this);
+ }
+}
+
+Environment.prototype.act = function() {
+ for(var i=0; i<this.children.length; i++){
+  if(this.children[i].act!==undefined)
+   this.children[i].act(this);
+ }
+}
+
+
+function Sensor(position,direction){
+ THREE.Raycaster.call(this,position,direction);
+ this.colision=false;
+}
+Sensor.prototype=new THREE.Raycaster();
 
 function kirby(x=0, y=0){
   Agent.call(this,x,y);
@@ -74,8 +110,71 @@ Environment.prototype.setMap=function(map){
  }
 }	
 
+kirby.prototype.sense=function(environment){
+ this.sensor.set(this.position, new THREE.Vector3(Math.cos(this.rotation.z),Math.sin(this.rotation.z),0));
+ var obstaculo = this.sensor.intersectObjects(environment.children,true);
+  if ((obstaculo.length>0&&(obstaculo[0].distance<=1.5))){
+  this.sensor.colision=true;
+  obstaculo[0].object.material=new THREE.MeshBasicMaterial({color:0xff0000});
+   }
+ else
+  this.sensor.colision=false;
+}
+
+kirby.prototype.plan = function(environment){
+ this.actuator.commands=[];
+ if(this.sensor.colision==true)
+  this.actuator.commands.push('RotarIzquierda');
+ else
+  this.actuator.commands.push('Derecho');
+}
+
+kirby.prototype.act=function(environment){
+ var command=this.actuator.commands.pop();
+ if(command==undefined)
+  console.log('Undefined command');
+ else if(command in this.operations)
+  this.operations[command](this);
+ else
+  console.log('Unknown command'); 
+}
+
 kirby.prototype.operations = {};
 
+kirby.prototype.operations.Derecho = function(robot,step){
+ if(step==undefined)
+ step=0.01;
+ robot.scale.x=0.5;
+ robot.scale.y=0.5;
+ robot.scale.z=0.5;
+ if (Math.abs(robot.pieD.rotation.z) > .3 )
+  steppie = -steppie;
+
+if (Math.abs(robot.brazoD.rotation.x) > 2 || Math.abs(robot.brazoD.rotation.x) < 1)
+  stepbrazo = -stepbrazo;
+
+ robot.position.x+=step*Math.cos(robot.rotation.z);
+ robot.position.y+=step*Math.sin(robot.rotation.z);
+ robot.brazoD.rotation.x += stepbrazo;
+ robot.brazoI.rotation.x += stepbrazo;
+ robot.pieD.rotation.z += steppie;
+ robot.pieI.rotation.z -= steppie;
+};
+
+
+kirby.prototype.operations.RotarDerecha = function(robot,angulo){
+ if(angulo==undefined){
+  angulo=-Math.PI/2;
+ }
+ robot.rotation.z+=angulo;
+};
+
+kirby.prototype.operations.RotarIzquierda = function(robot,angulo){
+ if(angulo==undefined){
+  angulo=Math.PI/2;
+ }
+ robot.rotation.z+=angulo;
+};
 function setup(){
 //Escenario
 var mapa = new Array();
