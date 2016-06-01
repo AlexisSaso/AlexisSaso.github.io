@@ -74,10 +74,10 @@ pared5.position.y=-20;
 camara=new THREE.PerspectiveCamera();
 camara.position.z=80;
 
-raycaster1=new THREE.Raycaster(kirby.position,new THREE.Vector3(3,0,0));
-raycaster2=new THREE.Raycaster(kirby.position,new THREE.Vector3(-3,0,0));
-raycaster3=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,3,0));
-raycaster4=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,-3,0));
+raycaster1=new THREE.Raycaster(kirby.position,new THREE.Vector3(6,0,0));
+raycaster2=new THREE.Raycaster(kirby.position,new THREE.Vector3(-6,0,0));
+raycaster3=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,6,0));
+raycaster4=new THREE.Raycaster(kirby.position,new THREE.Vector3(0,-6,0));
 
 
 //Creo la luz conica-----
@@ -194,56 +194,56 @@ pared5.material= new  THREE.MeshBasicMaterial({color:'#ff00ff'});
 };
 
 //campos de obstaculos
-if((((pared1.position.y-kirby.position.y)*(pared1.position.y-kirby.position.y))>3)&&(((pared1.position.x-kirby.position.x)*(pared1.position.x-kirby.position.x))>2))
+if((((pared1.position.y-kirby.position.y)*(pared1.position.y-kirby.position.y))>5)&&(((pared1.position.x-kirby.position.x)*(pared1.position.x-kirby.position.x))>5))
 {
 a1=(pared1.position.y-kirby.position.y)/((pared1.position.y-kirby.position.y)*(pared1.position.y-kirby.position.y));
 b1=(pared1.position.x-kirby.position.x)/((pared1.position.x-kirby.position.x)*(pared1.position.x-kirby.position.x));
 };
 
-if((((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y))>3)&&(((pared2.position.x-kirby.position.x)*(pared2.position.x-kirby.position.x))>2))
+if((((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y))>5)&&(((pared2.position.x-kirby.position.x)*(pared2.position.x-kirby.position.x))>5)
 {
 a2=(pared2.position.y-kirby.position.y)/((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y));
 b2=(pared2.position.x-kirby.position.x)/((pared2.position.x-kirby.position.x)*(pared2.position.x-kirby.position.x));
 };
 
-if((((pared3.position.y-kirby.position.y)*(pared3.position.y-kirby.position.y))>3)&&(((pared3.position.x-kirby.position.x)*(pared3.position.x-kirby.position.x))>2))
+if((((pared3.position.y-kirby.position.y)*(pared3.position.y-kirby.position.y))>5)&&(((pared3.position.x-kirby.position.x)*(pared3.position.x-kirby.position.x))>5))
 {
 a3=(pared3.position.y-kirby.position.y)/((pared3.position.y-kirby.position.y)*(pared3.position.y-kirby.position.y));
 b3=(pared3.position.x-kirby.position.x)/((pared3.position.x-kirby.position.x)*(pared3.position.x-kirby.position.x));
 };
 
-if((((pared4.position.y-kirby.position.y)*(pared4.position.y-kirby.position.y))>4)&&(((pared4.position.x-kirby.position.x)*(pared4.position.x-kirby.position.x))>2))
+if((((pared4.position.y-kirby.position.y)*(pared4.position.y-kirby.position.y))>5)&&(((pared4.position.x-kirby.position.x)*(pared4.position.x-kirby.position.x))>5))
 {
 a4=(pared4.position.y-kirby.position.y)/((pared4.position.y-kirby.position.y)*(pared4.position.y-kirby.position.y));
 b4=(pared4.position.x-kirby.position.x)/((pared4.position.x-kirby.position.x)*(pared4.position.x-kirby.position.x));
 };
 
-if((((pared5.position.y-kirby.position.y)*(pared5.position.y-kirby.position.y))>5)&&(((pared5.position.x-kirby.position.x)*(pared5.position.x-kirby.position.x))>2))
+if((((pared5.position.y-kirby.position.y)*(pared5.position.y-kirby.position.y))>5)&&(((pared5.position.x-kirby.position.x)*(pared5.position.x-kirby.position.x))>5))
 {
 a5=(pared5.position.y-kirby.position.y)/((pared5.position.y-kirby.position.y)*(pared5.position.y-kirby.position.y));
 b5=(pared5.position.x-kirby.position.x)/((pared5.position.x-kirby.position.x)*(pared5.position.x-kirby.position.x));
 };
 
-if(((pared1.position.y-kirby.position.y)*(pared1.position.y-kirby.position.y))>4)
+if(((pared1.position.y-kirby.position.y)*(pared1.position.y-kirby.position.y))>5)
 b1=0;
-if(((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y))>4)
+if(((pared2.position.y-kirby.position.y)*(pared2.position.y-kirby.position.y))>5)
 b2=0;
-if(((pared3.position.y-kirby.position.y)*(pared3.position.y-kirby.position.y))>4)
+if(((pared3.position.y-kirby.position.y)*(pared3.position.y-kirby.position.y))>5)
 b3=0;
-if(((pared4.position.y-kirby.position.y)*(pared4.position.y-kirby.position.y))>4)
+if(((pared4.position.y-kirby.position.y)*(pared4.position.y-kirby.position.y))>5)
 b4=0;
-if(((pared5.position.y-kirby.position.y)*(pared5.position.y-kirby.position.y))>4)
+if(((pared5.position.y-kirby.position.y)*(pared5.position.y-kirby.position.y))>5)
 b5=0;
 
-if(((pared1.position.x-kirby.position.x)*(pared1.position.x-kirby.position.x))>4)
+if(((pared1.position.x-kirby.position.x)*(pared1.position.x-kirby.position.x))>5)
 a1=0;
-if(((pared2.position.x-kirby.position.x)*(pared2.position.x-kirby.position.x))>4)
+if(((pared2.position.x-kirby.position.x)*(pared2.position.x-kirby.position.x))>5)
 a2=0;
-if(((pared3.position.x-kirby.position.x)*(pared3.position.x-kirby.position.x))>4)
+if(((pared3.position.x-kirby.position.x)*(pared3.position.x-kirby.position.x))>5)
 a3=0;
-if(((pared4.position.x-kirby.position.x)*(pared4.position.x-kirby.position.x))>4)
+if(((pared4.position.x-kirby.position.x)*(pared4.position.x-kirby.position.x))>5)
 a4=0;
-if(((pared5.position.x-kirby.position.x)*(pared5.position.x-kirby.position.x))>4)
+if(((pared5.position.x-kirby.position.x)*(pared5.position.x-kirby.position.x))>5)
 a5=0;
 
 stepy=((OBJETIVOY-kirby.position.y)/100)-(c1*a1)-(c2*a2)-(c3*a3)-(c4*a4)-(c5*a5);
